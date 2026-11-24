@@ -1,0 +1,9 @@
+{
+  "game": "leonida",
+  "availability": "not-verified-playable",
+  "upstreamRepository": "inaccessible",
+  "checkedAt": "2026-11-24T06:19:09Z",
+  "stale": true,
+  "sourceIds": ["leonida-project-site", "leonida-independent-report", "leonida-upstream-repository", "leonida-status-snapshot"],
+  "notesKey": "status.leonida.notPlayableYet"
+}

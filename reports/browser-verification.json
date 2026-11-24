@@ -1,0 +1,141 @@
+{
+  "checkedAt": "2026-11-24T11:51:41.043Z",
+  "pages": [
+    {
+      "name": "home-desktop",
+      "path": "/",
+      "viewport": "1440x1000",
+      "lang": "en",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "Can I Run GTA 6?",
+      "title": "Can I Run GTA 6? Free PC Requirements Checker",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "chapters-desktop",
+      "path": "/gta-6-chapters/",
+      "viewport": "1440x1000",
+      "lang": "en",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "GTA 6 Chapters: Mission Counts & Checklists",
+      "title": "GTA 6 Chapters: Mission Counts & Checklists",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "chapter3-desktop",
+      "path": "/gta-6-chapters/chapter-3/",
+      "viewport": "1440x1000",
+      "lang": "en",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "GTA 6 Chapter 3: Missions & Checklist",
+      "title": "GTA 6 Chapter 3: Missions & Checklist",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "chapter3-mobile",
+      "path": "/gta-6-chapters/chapter-3/",
+      "viewport": "390x844",
+      "lang": "en",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "GTA 6 Chapter 3: Missions & Checklist",
+      "title": "GTA 6 Chapter 3: Missions & Checklist",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "characters-desktop",
+      "path": "/characters/",
+      "viewport": "1440x1000",
+      "lang": "en",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "GTA 6 Characters: Leads, Cast & Contacts",
+      "title": "GTA 6 Characters: Leads, Cast & Contacts",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "mandy-desktop",
+      "path": "/characters/mandy/",
+      "viewport": "1440x1000",
+      "lang": "en",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "GTA VI Mandy: Character Facts & Theory Explained",
+      "title": "GTA VI Mandy: Character Facts & Theory Explained",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "money-desktop",
+      "path": "/gta-6-money/",
+      "viewport": "1440x1000",
+      "lang": "en",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "GTA 6 Money: Reported Methods & Payouts",
+      "title": "GTA 6 Money: Reported Methods & Payouts",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "arabic-chapter3-mobile",
+      "path": "/ar/فصول-gta-6/الفصل-3/",
+      "viewport": "390x844",
+      "lang": "ar",
+      "dir": "rtl",
+      "overflow": 0,
+      "h1": "الفصل 3 من GTA 6: المهام والقائمة",
+      "title": "الفصل 3 من GTA 6: المهام والقائمة",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "arabic-money-mobile",
+      "path": "/ar/مال-gta-6/",
+      "viewport": "390x844",
+      "lang": "ar",
+      "dir": "rtl",
+      "overflow": 0,
+      "h1": "المال في GTA 6: الطرق والمكافآت المذكورة",
+      "title": "المال في GTA 6: الطرق والمكافآت المذكورة",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    },
+    {
+      "name": "spanish-chapters-mobile",
+      "path": "/es/capitulos-gta-6/",
+      "viewport": "390x844",
+      "lang": "es",
+      "dir": "ltr",
+      "overflow": 0,
+      "h1": "Capítulos de GTA 6: misiones y listas",
+      "title": "Capítulos de GTA 6: misiones y listas",
+      "unresolvedPlaceholders": [],
+      "analyticsRequests": 0,
+      "errors": []
+    }
+  ],
+  "checklistState": {
+    "persisted": true,
+    "checkedCount": 1,
+    "progressText": "1 of 27 complete · 4%\n4%\n\nProgress is saved only in this browser. It is not synced to an account or shared with Rockstar.",
+    "errors": []
+  }
+}

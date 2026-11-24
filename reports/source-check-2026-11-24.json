@@ -1,0 +1,810 @@
+{
+  "checkedAt": "2026-11-24T11:43:41.349Z",
+  "summary": {
+    "total": 53,
+    "accessible": 49,
+    "changed": 29
+  },
+  "results": [
+    {
+      "id": "rockstar-gta6-out-now",
+      "url": "https://www.rockstargames.com/VI/out-now",
+      "publisher": "Rockstar Games",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24T06:19:09Z",
+      "checkedAt": "2026-11-24T11:43:34.579Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.rockstargames.com/VI/out-now",
+      "contentHash": "de6df5e9e365bf53010b884ad7cb4fab80f0b1cc2e16fcb646283e06af7bba5b",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "rockstar-gta6-platforms",
+      "url": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
+      "publisher": "Rockstar Games",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:34.635Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
+      "contentHash": "41563098b974522e545b1b7125ed3c0bdfdd2925452aa05d986d8bccbb478f96",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "leonida-project-site",
+      "url": "https://leonidarecomp.com/",
+      "publisher": "Leonida project",
+      "recordedAccessible": false,
+      "recordedCheckedAt": "2026-11-24T06:19:09Z",
+      "checkedAt": "2026-11-24T11:43:34.637Z",
+      "accessible": false,
+      "statusCode": null,
+      "finalUrl": null,
+      "contentHash": null,
+      "changes": [],
+      "error": "fetch failed"
+    },
+    {
+      "id": "leonida-independent-report",
+      "url": "https://allthings.how/gta-6-leonida-github-pc-port/",
+      "publisher": "All Things How",
+      "recordedAccessible": false,
+      "recordedCheckedAt": "2026-11-24T06:19:09Z",
+      "checkedAt": "2026-11-24T11:43:34.638Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://allthings.how/gta-6-leonida-github-pc-port/",
+      "contentHash": "bbacecca3e4fbbec98d474d79c6b512bdcc86ea688f06cee603de4047dd8b733",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "leonida-upstream-repository",
+      "url": "https://github.com/ItsNotRexed/Leonida",
+      "publisher": "ItsNotRexed/Leonida",
+      "recordedAccessible": false,
+      "recordedCheckedAt": "2026-11-24T06:19:09Z",
+      "checkedAt": "2026-11-24T11:43:34.639Z",
+      "accessible": false,
+      "statusCode": 404,
+      "finalUrl": "https://github.com/ItsNotRexed/Leonida",
+      "contentHash": null,
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "leonida-historical-reference",
+      "url": "https://www.survivalservers.com/tools/gta-6/can-i-run-leonida/",
+      "publisher": "Survival Servers",
+      "recordedAccessible": false,
+      "recordedCheckedAt": "2026-11-24T06:19:09Z",
+      "checkedAt": "2026-11-24T11:43:34.640Z",
+      "accessible": false,
+      "statusCode": 403,
+      "finalUrl": "https://www.survivalservers.com/tools/gta-6/can-i-run-leonida/",
+      "contentHash": null,
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "leonida-status-snapshot",
+      "url": "https://www.appinn.com/gta-6-pc-port-leonida/",
+      "publisher": "小众软件",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24T06:19:09Z",
+      "checkedAt": "2026-11-24T11:43:35.319Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.appinn.com/gta-6-pc-port-leonida/",
+      "contentHash": "db24fd1a8a302b10729a7c5adaaf26d0139263d06234787786415cb3fb0188c1",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "mdn-webgl-renderer",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info",
+      "publisher": "MDN",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:35.342Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info",
+      "contentHash": "1844b1e1cd5ac8f96baa8ee17be21a1ca562c781b21505930964ea6c00fa57d7",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "mdn-hardware-concurrency",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency",
+      "publisher": "MDN",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:35.399Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency",
+      "contentHash": "2d3d000180fc52150179fd12330b54f0d52a6f061153273cb360dc82eba640ac",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "mdn-device-memory",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory",
+      "publisher": "MDN",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:35.436Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory",
+      "contentHash": "244cc1c9de5dd5ef9e5adc138164894a9f5c72b246918c94c16600e8e99a2909",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-5-5600",
+      "url": "https://www.amd.com/de/product/11831",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:35.683Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/specifications.html",
+      "contentHash": "0771d6bfd64d14988eadec206d10898aa093166e13351b20bbea3e394d5177e1",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-5-5600x",
+      "url": "https://www.amd.com/en/products/processors/desktops/ryzen/5000-series/amd-ryzen-5-5600x.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:35.979Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/5000-series/amd-ryzen-5-5600x.html",
+      "contentHash": "8bd6bb75f25df97d782727d5c7d5bff976e5e9ac8ef2f0b19fc4f90d7620ffcf",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-7-3700x",
+      "url": "https://www.amd.com/en/product/8446",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:36.051Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/specifications.html",
+      "contentHash": "bbb835dea4275006eb2005ef38e407dfaa6ecaa1469f3ca8ad6682bbd9f1d128",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-intel-core-i5-12400f",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/134587/intel-core-i512400f-processor-18m-cache-up-to-4-40-ghz/specifications.html",
+      "publisher": "Intel",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:36.078Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.intel.com/content/www/us/en/products/sku/134587/intel-core-i512400f-processor-18m-cache-up-to-4-40-ghz/specifications.html",
+      "contentHash": "8fa4afb3fca30caf2122aa12565915d4ef202eef67bb24c9fdbca26039023d86",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-intel-core-i5-13400f",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/230501/intel-core-i513400f-processor-20m-cache-up-to-4-60-ghz/specifications.html",
+      "publisher": "Intel",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:36.229Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.intel.com/content/www/us/en/products/sku/230501/intel-core-i513400f-processor-20m-cache-up-to-4-60-ghz/specifications.html",
+      "contentHash": "eb1a3f21aa412e96ec63dacfa108ab172b5f5897ef883cebd20e8c35a303ab40",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-intel-core-i5-14600k",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/236799/intel-core-i5-processor-14600k-24m-cache-up-to-5-30-ghz/specifications.html",
+      "publisher": "Intel",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:36.385Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.intel.com/content/www/us/en/products/sku/236799/intel-core-i5-processor-14600k-24m-cache-up-to-5-30-ghz/specifications.html",
+      "contentHash": "1544cf2936b51de0cf3aae94b8883825ca97e1da98594075785d94630498d5bb",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-5-7600",
+      "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:36.995Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+      "contentHash": "ce5d6511f7bfecdf7a48cde8244e552cf1eff0c75f8c2d4d2158714cc1ad5926",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-7-7800x3d",
+      "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800x3d.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:36.997Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800x3d.html",
+      "contentHash": "fb92d874c9dcb89f2a575e7a7521bff3427b44abe401c3943e3c39de73d2736f",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-5-5600h",
+      "url": "https://www.amd.com/zh-hant/product/10831",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:37.056Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/specifications.html",
+      "contentHash": "81d9d2635992d9a1a4681222581d065372ca81c0d457a46b24a546c0307934e0",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-5-7640hs",
+      "url": "https://www.amd.com/en/products/processors/laptop/ryzen/7000-series/amd-ryzen-5-7640hs.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:37.233Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/7000-series/amd-ryzen-5-7640hs.html",
+      "contentHash": "67306831bb338eeb1bfa3c64c1a1b892ab04609bd10bf2e8418ad526cbe952b7",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-3060-family",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3060-3060ti/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:37.268Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3060-3060ti/",
+      "contentHash": "284b30f7249af894853cc8b114a3d95a58494cd4f3adf2400dea255a62be14b3",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-30-laptop",
+      "url": "https://www.nvidia.com/en-us/geforce/laptops/compare/30-series/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:37.511Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/laptops/compare/30-series/",
+      "contentHash": "d6493cfc4ac8d2108d8c33a001ce371f8611ab57ad75bff46ad17ddc6cbb5c7a",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-3070-family",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3070-3070ti/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:37.765Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3070-3070ti/",
+      "contentHash": "602e9750943a5ca60c66a76f720878b5b88683ae358a015ba4e14fd18d2ddd52",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-4060-family",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:37.852Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/",
+      "contentHash": "f4550af5414349bb586a4716948fd7f1d65bc3c0840fca0a2b38b3ca897eb3d3",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-4070-family",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4070-family/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:38.060Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4070-family/",
+      "contentHash": "c1cbedc2a6e57563ba00b5439a3a1c706455ce5b8ef74d8c712423f5698d25a9",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-5060-family",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:38.091Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+      "contentHash": "a626400da7a1d4a50c357570269465e3c7c0b66ff3b02e09a7d4f6db56b6b1aa",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-5070-family",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:38.636Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+      "contentHash": "8ba447dae1d508810a03cba9ef7410fe2f906c619f92d661dbcdc117a4528f3c",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-laptop-compare",
+      "url": "https://www.nvidia.com/en-us/geforce/laptops/compare/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:38.682Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/laptops/compare/",
+      "contentHash": "4e79202f762a8d235f79d5c642ae9645f8d15bd51d8b637814a3510574013909",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-6600",
+      "url": "https://www.amd.com/zh-cn/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6600.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:38.922Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/zh-cn/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6600.html",
+      "contentHash": "677bff7fccb4a1ee5103e6f63f0038eefbd41a31272414bef12f36c8f07bdcef",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-6700-xt",
+      "url": "https://www.amd.com/zh-cn/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6700-xt.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:38.964Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/zh-cn/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6700-xt.html",
+      "contentHash": "5708cc0c151dd2ba52e8436f814b3eecc740c7b8c1013b6742229c078380776a",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-6800",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2020-10-28-amd-radeon-rx-6000-aaa-4k.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.024Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://newsroom.amd.com/",
+      "contentHash": "4616764fe9da816485e84ea1741ca1dbc2216aa1a835640634ffbb56fc546321",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-7600",
+      "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7600.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.028Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7600.html",
+      "contentHash": "c0ae87c19a83bab70ff46ea0c710be077daac4b7f6d9a07a0d0f9703583705a5",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-7800-xt",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2023-8-25-new-amd-radeon-rx-7800-xt-and-radeon-rx-7700-xt-gr.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.241Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/newsroom/press-releases/2023-8-25-new-amd-radeon-rx-7800-xt-and-radeon-rx-7700-xt-gr.html",
+      "contentHash": "9a9cf6e70f26e97a711ca5e2e5799e7431cd44e1bd836a1c2c5e612c3966d2c5",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-7600m-xt",
+      "url": "https://www.amd.com/en/products/graphics/amd-radeon-rx-7600m-xt",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.320Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/graphics/desktops/radeon.html",
+      "contentHash": "41b1dead471b3e274d2467350113e8d5a28f5fa80f3c270b10a5dd5ea05db2fe",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-intel-core-i9-14900k",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/236773/intel-core-i9-processor-14900k-36m-cache-up-to-6-00-ghz/specifications.html",
+      "publisher": "Intel",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.478Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.intel.com/content/www/us/en/products/sku/236773/intel-core-i9-processor-14900k-36m-cache-up-to-6-00-ghz/specifications.html",
+      "contentHash": "92064db78ae9bfeeb854e758cbd341236dfcd71df6fefe3c531ad2ec9bcc570f",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-intel-core-i7-14700k",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/236783/intel-core-i7-processor-14700k-33m-cache-up-to-5-60-ghz/specifications.html",
+      "publisher": "Intel",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.721Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.intel.com/content/www/us/en/products/sku/236783/intel-core-i7-processor-14700k-33m-cache-up-to-5-60-ghz/specifications.html",
+      "contentHash": "96907b00a1ebb6450a1b135a4a006c44d301515d9730b5a3854be82184b17d3b",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-intel-core-ultra-9-285k",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/specifications.html",
+      "publisher": "Intel",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.726Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/specifications.html",
+      "contentHash": "a59c9fdbf22785c2e5742b3a04f8033f4d0cfc363cbec6a5a958dba723747839",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-7-9800x3d",
+      "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.790Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
+      "contentHash": "d89acce35d5e987dda6ab12b0fedfbe75fd52597bb682abc33c2a9a59e6b8d37",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-ryzen-9-9950x",
+      "url": "https://www.amd.com/en/PROducts/PROcessors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:39.896Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/PROducts/PROcessors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html",
+      "contentHash": "ac358fee5c802ea2c77578fda7e89854597ccef7520875975eb90da34b0a575c",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-5090",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.035Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+      "contentHash": "fedd6bc4dfbde6cf6d4bf6b798cdc6a9802afe0a12eff1f12bb873bf96a27daa",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-nvidia-rtx-5080",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+      "publisher": "NVIDIA",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.038Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+      "contentHash": "24009011e717792d8a15822965390ec3986a6e379b55c775b9a58edec95bca91",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-9070-xt",
+      "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.064Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html",
+      "contentHash": "8e0e7cbd6e8a37a0b7de4980e44e2bae39f7da3810833715c57698b93936c030",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "src-amd-rx-7900-xtx",
+      "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html",
+      "publisher": "AMD",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.244Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html",
+      "contentHash": "b76ae43793b92e56896447e4a04addeca002014e976e1b29cb138583696f3809",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "rockstar-gta6-credits",
+      "url": "https://www.rockstargames.com/VI/credits",
+      "publisher": "Rockstar Games",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.275Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.rockstargames.com/VI/credits",
+      "contentHash": "400d2077232a6e87269fbdde9c5ad093dbb89dd948e4af0e14c7a08c9a011a25",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "gamesradar-gta6-missions",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-mission-list/",
+      "publisher": "GamesRadar+",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.315Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-mission-list/",
+      "contentHash": "f15bfd99c9a21847760209930165354409493a509f27568a62d1afa4ba3d1e8b",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "gamesgg-gta6-missions",
+      "url": "https://games.gg/zh-CN/grand-theft-auto-vi/guides/gta-6-%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8%E5%90%84%E7%AB%A0%E8%8A%82%E5%85%A8%E4%BB%BB%E5%8A%A1%E4%B8%80%E8%A7%88/",
+      "publisher": "games.gg",
+      "recordedAccessible": false,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.332Z",
+      "accessible": false,
+      "statusCode": 403,
+      "finalUrl": "https://games.gg/zh-CN/grand-theft-auto-vi/guides/gta-6-%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8%E5%90%84%E7%AB%A0%E8%8A%82%E5%85%A8%E4%BB%BB%E5%8A%A1%E4%B8%80%E8%A7%88/",
+      "contentHash": null,
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "sohu-gta6-chapters",
+      "url": "https://m.sohu.com/a/1103932286_121212001/",
+      "publisher": "Sohu",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.418Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://m.sohu.com/a/1103932286_121212001/",
+      "contentHash": "90e3a2afb2a46058d992b427cb688e860143c432d05fc9de294546f1b426d5a4",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "gamersky-mandy",
+      "url": "https://www.gamersky.com/news/202611/2251262.shtml",
+      "publisher": "Gamersky",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.478Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.gamersky.com/news/202611/2251262.shtml",
+      "contentHash": "de50cac59472de4d9e2b50bae5f91ce1295d34a2d67dcc5d3d1c6632d5f17c56",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "163-mandy-actress",
+      "url": "https://m.163.com/dy/article/LC8AT90F05561FY5.html",
+      "publisher": "NetEase (163.com)",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.567Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://m.163.com/dy/article/LC8AT90F05561FY5.html",
+      "contentHash": "c5f43434e2db689ebba557f781cef01ecd18843a0b2ba2e7c522f1ea88755b5e",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "ali213-gta6-money",
+      "url": "https://3g.ali213.net/gl/html/1827935.html",
+      "publisher": "Ali213",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.569Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://3g.ali213.net/gl/html/1827935.html",
+      "contentHash": "4a762c17ba7db79f0439dd41a88271240c5d3fe9fa9fbc99ac82e1bf30d21604",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "163-gta6-money",
+      "url": "https://m.163.com/dy/article/LC5L7MCM0552H31S.html",
+      "publisher": "NetEase (163.com)",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.683Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://m.163.com/dy/article/LC5L7MCM0552H31S.html",
+      "contentHash": "de5c0ebf7c1dc2b4d0bd60059917a8e6f8bf1d3fb4349a5dbda7cb5fc17a0174",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    },
+    {
+      "id": "sohu-gta6-loot-respawn",
+      "url": "https://m.sohu.com/a/1105271587_114760/",
+      "publisher": "Sohu",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.883Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://m.sohu.com/a/1105271587_114760/",
+      "contentHash": "ab5c8247e667c3e217858ec99f5964635ff2e60ac048a12a82759466312c27bb",
+      "changes": [],
+      "error": null
+    },
+    {
+      "id": "bilibili-gta6-money-loop",
+      "url": "https://www.bilibili.com/video/BV1xGyaz8ETj",
+      "publisher": "Bilibili (user video)",
+      "recordedAccessible": true,
+      "recordedCheckedAt": "2026-11-24",
+      "checkedAt": "2026-11-24T11:43:40.899Z",
+      "accessible": true,
+      "statusCode": 200,
+      "finalUrl": "https://www.bilibili.com/video/BV1xGyaz8ETj/",
+      "contentHash": "ab980985c02815ec3d9f8fa8d0adb5251ace324833276ad5b61ee3b63e794223",
+      "changes": [
+        "content-changed"
+      ],
+      "error": null
+    }
+  ]
+}

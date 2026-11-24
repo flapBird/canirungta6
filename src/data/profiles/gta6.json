@@ -1,0 +1,23 @@
+{
+  "id": "gta6-reference-unknown",
+  "game": "gta6",
+  "version": "2026-11-24.1",
+  "evidenceKind": "forecast",
+  "referenceCpuIds": [],
+  "referenceGpuIds": [],
+  "cpuMetric": "gamingScore",
+  "gpuMetric": "rasterScore",
+  "cpuTarget": null,
+  "gpuTarget": null,
+  "ramGB": null,
+  "vramGB": null,
+  "requiredOs": [],
+  "requiredArchitecture": [],
+  "storageReferenceGB": null,
+  "storageStage": null,
+  "resolution": "unknown",
+  "sourceIds": ["rockstar-gta6-out-now", "rockstar-gta6-platforms"],
+  "reviewedAt": "2026-11-24",
+  "confidence": "unknown",
+  "stale": false
+}

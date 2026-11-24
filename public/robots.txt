@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://canirungta6.online/sitemap.xml

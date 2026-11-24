@@ -1,0 +1,23 @@
+{
+  "id": "leonida-console-comparable-historical",
+  "game": "leonida",
+  "version": "historical-2026-11-24.1",
+  "evidenceKind": "historical-community",
+  "referenceCpuIds": ["amd-ryzen-7-3700x", "amd-ryzen-5-5600"],
+  "referenceGpuIds": ["nvidia-rtx-3060-ti-desktop", "nvidia-rtx-3070-desktop", "amd-rx-6700-xt-desktop", "amd-rx-6800-desktop"],
+  "cpuMetric": "gamingScore",
+  "gpuMetric": "rasterScore",
+  "cpuTarget": null,
+  "gpuTarget": null,
+  "ramGB": 32,
+  "vramGB": null,
+  "requiredOs": ["windows10", "windows11"],
+  "requiredArchitecture": ["x64"],
+  "storageReferenceGB": null,
+  "storageStage": null,
+  "resolution": "unknown",
+  "sourceIds": ["leonida-historical-reference", "leonida-project-site"],
+  "reviewedAt": "2026-11-24",
+  "confidence": "unknown",
+  "stale": true
+}

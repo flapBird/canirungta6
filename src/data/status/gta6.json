@@ -1,0 +1,9 @@
+{
+  "game": "gta6",
+  "availability": "unannounced",
+  "upstreamRepository": "access-unconfirmed",
+  "checkedAt": "2026-11-24T06:19:09Z",
+  "stale": false,
+  "sourceIds": ["rockstar-gta6-out-now", "rockstar-gta6-platforms"],
+  "notesKey": "status.gta6.pcUnannounced"
+}

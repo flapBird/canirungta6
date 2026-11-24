@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-24",
+  "productionOrigin": "https://canirungta6.online",
+  "contactEmail": "support@canirungta6.online",
+  "sitemapUrls": 45,
+  "legalRoutes": 9,
+  "checks": {
+    "dataValidation": "passed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "unitTests": "60 passed",
+    "chromiumE2E": "26 passed",
+    "oldDomainInExport": false,
+    "horizontalOverflow": 0,
+    "runtimeErrors": 0,
+    "unresolvedPlaceholders": false
+  },
+  "visualChecks": [
+    { "path": "/terms/", "viewport": "1440x1000", "locale": "en", "direction": "ltr", "screenshot": "reports/legal-en-terms-desktop.png" },
+    { "path": "/es/privacidad/", "viewport": "1440x1000", "locale": "es", "direction": "ltr", "screenshot": "reports/legal-es-privacy-desktop.png" },
+    { "path": "/ar/الشروط/", "viewport": "1440x1000", "locale": "ar", "direction": "rtl", "screenshot": "reports/legal-ar-terms-desktop.png" },
+    { "path": "/privacy/", "viewport": "390x844", "locale": "en", "direction": "ltr", "screenshot": "reports/legal-en-privacy-mobile.png" },
+    { "path": "/es/cookies/", "viewport": "390x844", "locale": "es", "direction": "ltr", "screenshot": "reports/legal-es-cookies-mobile.png" },
+    { "path": "/ar/ملفات-تعريف-الارتباط/", "viewport": "390x844", "locale": "ar", "direction": "rtl", "screenshot": "reports/legal-ar-cookies-mobile.png" }
+  ]
+}

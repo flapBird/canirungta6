@@ -1,0 +1,17 @@
+{
+  "home": { "en": "", "es": "es", "ar": "ar", "indexable": true },
+  "leonida": { "en": "can-i-run-leonida", "es": "es/can-i-run-leonida", "ar": "ar/can-i-run-leonida", "indexable": true },
+  "requirements": { "en": "gta-6-pc-requirements", "es": "es/requisitos-gta-6-pc", "ar": "ar/gta-6-pc-requirements", "indexable": true },
+  "status": { "en": "gta-6-pc", "es": "es/gta-6-pc", "ar": "ar/gta-6-pc", "indexable": true },
+  "chapters": { "en": "gta-6-chapters", "es": "es/capitulos-gta-6", "ar": "ar/فصول-gta-6", "indexable": true },
+  "chapter3": { "en": "gta-6-chapters/chapter-3", "es": "es/capitulos-gta-6/capitulo-3", "ar": "ar/فصول-gta-6/الفصل-3", "indexable": true },
+  "chapter4": { "en": "gta-6-chapters/chapter-4", "es": "es/capitulos-gta-6/capitulo-4", "ar": "ar/فصول-gta-6/الفصل-4", "indexable": true },
+  "characters": { "en": "characters", "es": "es/personajes", "ar": "ar/الشخصيات", "indexable": true },
+  "mandy": { "en": "characters/mandy", "es": "es/personajes/mandy", "ar": "ar/الشخصيات/ماندي", "indexable": true },
+  "money": { "en": "gta-6-money", "es": "es/dinero-gta-6", "ar": "ar/مال-gta-6", "indexable": true },
+  "methodology": { "en": "methodology", "es": "es/metodologia", "ar": "ar/المنهجية", "indexable": true },
+  "privacy": { "en": "privacy", "es": "es/privacidad", "ar": "ar/الخصوصية", "indexable": true },
+  "terms": { "en": "terms", "es": "es/terminos", "ar": "ar/الشروط", "indexable": true },
+  "cookies": { "en": "cookies", "es": "es/cookies", "ar": "ar/ملفات-تعريف-الارتباط", "indexable": true },
+  "about": { "en": "about", "es": "es/acerca-de", "ar": "ar/من-نحن", "indexable": true }
+}
