@@ -61,12 +61,18 @@ The checked-in `.env.production` uses the production origin `https://canirungta6
 
 ## Cloudflare Pages deployment
 
-Use a Next.js static export:
+This project is a Next.js static export and must be deployed as **Cloudflare Pages**, not through the OpenNext Cloudflare Workers adapter.
 
-- **Build command:** `npm run build`
+Configure the Pages project under **Settings → Builds and deployments**:
+
+- **Framework preset:** Next.js (Static HTML Export)
+- **Build command:** `npm run build:cloudflare`
 - **Build output directory:** `out`
+- **Root directory:** repository root
 - **Node.js version:** 24.x recommended
-- **Environment variables:** set `NEXT_PUBLIC_SITE_URL` and any optional analytics IDs
+- **Environment variables:** set `NEXT_PUBLIC_SITE_URL` and any optional analytics IDs; the checked-in `.env.production` supplies the production origin and GTM container
+
+Do not use `npx opennextjs-cloudflare build` for this repository. OpenNext is for Next.js applications running on Cloudflare Workers and requires an `open-next.config.ts`; this site intentionally uses `output: "export"` and has no Worker runtime or independent backend. If a failed build shows the OpenNext command, correct the Pages build command above and retry the deployment.
 
 No database, server runtime, API route, or independent backend is required. `public/_headers` supplies the CSP and privacy/security headers on Cloudflare Pages. Rebuild after changing the production origin or any public data file.
 
