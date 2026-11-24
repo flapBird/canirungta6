@@ -2,7 +2,7 @@ import routesData from "@/data/routes.json";
 import type { Locale } from "@/lib/types";
 
 export const locales: Locale[] = ["en", "es", "ar"];
-export const businessPages = ["home", "leonida", "requirements", "status"] as const;
+export const businessPages = ["home", "leonida", "requirements", "status", "port"] as const;
 export type PageId = keyof typeof routesData;
 
 export function localePath(page: PageId, locale: Locale): string {

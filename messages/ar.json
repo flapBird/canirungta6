@@ -1,7 +1,7 @@
 {
   "localeName": "العربية",
   "direction": "rtl",
-  "nav": { "checker": "فاحص PC", "leonida": "Leonida", "requirements": "المتطلبات", "status": "حالة PC", "guides": "الأدلة" },
+  "nav": { "checker": "فاحص PC", "leonida": "Leonida", "port": "مشاريع النقل للحاسوب", "requirements": "المتطلبات", "status": "حالة PC", "guides": "الأدلة" },
   "common": {
     "brandTagline": "أدوات مستقلة لتقييم جاهزية أجهزة PC",
     "skip": "انتقل إلى المحتوى الرئيسي",
@@ -17,6 +17,9 @@
     "unavailable": "غير متاح",
     "primaryNav": "التنقل الرئيسي",
     "mobileNav": "التنقل على الهاتف",
+    "footerTools": "أدوات الحاسوب",
+    "footerSite": "معلومات الموقع",
+    "footerCookies": "سياسة ملفات تعريف الارتباط",
     "footerNav": "روابط التذييل",
     "breadcrumb": "مسار التنقل",
     "forecast": "توقع",

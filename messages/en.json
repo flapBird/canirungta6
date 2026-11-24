@@ -1,7 +1,7 @@
 {
   "localeName": "English",
   "direction": "ltr",
-  "nav": { "checker": "PC Checker", "leonida": "Leonida", "requirements": "Requirements", "status": "PC Status", "guides": "Guides" },
+  "nav": { "checker": "PC Checker", "leonida": "Leonida", "port": "PC Ports", "requirements": "Requirements", "status": "PC Status", "guides": "Guides" },
   "common": {
     "brandTagline": "Independent PC readiness tools",
     "skip": "Skip to main content",
@@ -17,6 +17,9 @@
     "unavailable": "Unavailable",
     "primaryNav": "Primary navigation",
     "mobileNav": "Mobile navigation",
+    "footerTools": "PC tools",
+    "footerSite": "Site information",
+    "footerCookies": "Cookie policy",
     "footerNav": "Footer navigation",
     "breadcrumb": "Breadcrumb",
     "forecast": "Forecast",

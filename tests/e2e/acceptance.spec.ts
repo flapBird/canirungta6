@@ -379,7 +379,7 @@ test("A17: all localized legal pages expose complete policies, contact links, an
   const email = footer.getByRole("link", { name: /support@canirungta6\.online/ });
   await expect(email).toHaveAttribute("href", "mailto:support@canirungta6.online");
   await expect(email).toHaveAttribute("dir", "ltr");
-  await expect(footer.getByRole("link", { name: "سياسة ملفات تعريف الارتباط وتخزين المتصفح", exact: true })).toBeVisible();
+  await expect(footer.getByRole("link", { name: "سياسة ملفات تعريف الارتباط", exact: true })).toBeVisible();
   for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
@@ -493,4 +493,37 @@ test("Port comparison, official news and hardware forecasts have distinct conten
   await page.getByRole("link", { name: "AMD Radeon RX 6600", exact: true }).click();
   await page.getByRole("button", { name: "Check My PC" }).click();
   await expect(page.locator('[aria-live="polite"]')).toContainText("GPU below console reference");
+});
+
+test("Port navigation, breadcrumb text alignment and grouped footer work at both header breakpoints", async ({ page }) => {
+  for (const locale of ["en", "es", "ar"] as const) {
+    const portPath = `/${routes.port[locale]}/`;
+    for (const width of [320, 1024]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(`/${routes.requirements[locale]}/`);
+      const header = page.locator("header").first();
+      if (width >= 1024) await expect(header.locator("button")).toBeHidden();
+      if (width < 1024) await header.getByRole("button").click();
+      const port = header.locator(`nav:visible a[href="${portPath}"]`);
+      await expect(port).toBeVisible();
+      await port.click();
+
+      if (width < 1024) await header.getByRole("button").click();
+      await expect(port).toHaveAttribute("aria-current", "page");
+      const offsets = await page.locator('nav:has([aria-current="page"])').filter({ has: page.locator('span[aria-current="page"]') }).evaluate((nav) => {
+        return [...nav.querySelectorAll("a, [aria-hidden], [aria-current]")].map((item) => {
+          const range = document.createRange();
+          range.selectNodeContents(item);
+          const rect = range.getBoundingClientRect();
+          return rect.y + rect.height / 2;
+        });
+      });
+      expect(Math.max(...offsets) - Math.min(...offsets)).toBeLessThanOrEqual(2);
+      const footer = page.locator("footer nav");
+      await expect(footer.getByRole("list")).toHaveCount(3);
+      await expect(footer.getByRole("link")).toHaveCount(13);
+      await expect(footer.locator(`a[href="${portPath}"]`)).toBeVisible();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
+    }
+  }
 });

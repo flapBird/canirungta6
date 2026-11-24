@@ -28,8 +28,9 @@ export function pageMetadata(page: PageId, locale: Locale, dictionary: Dictionar
   };
 }
 
-function crumbName(page: PageId, dictionary: Dictionary): string {
+export function crumbName(page: PageId, dictionary: Dictionary): string {
   if (page === "home") return dictionary.common.home;
+  if (page === "port" || page === "requirements" || page === "status" || page === "leonida") return dictionary.nav[page];
   return dictionary.guides[`${page}Crumb`] ?? dictionary.seo[page].title;
 }
 

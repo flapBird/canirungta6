@@ -67,7 +67,7 @@ export function SiteHeader({ locale, dictionary }: SiteHeaderProps) {
           </label>
           <button
             type="button"
-            className="btn-secondary min-h-11 px-3 lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-lg border border-border bg-surface hover:border-secondary lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-navigation"
             aria-label={dictionary.common.menu}

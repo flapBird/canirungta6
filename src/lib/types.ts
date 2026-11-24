@@ -141,7 +141,7 @@ export interface GameStatus {
 export interface Dictionary {
   localeName: string;
   direction: "ltr" | "rtl";
-  nav: { checker: string; leonida: string; requirements: string; status: string; guides: string };
+  nav: { checker: string; port: string; leonida: string; requirements: string; status: string; guides: string };
   common: Record<string, string>;
   guides: Record<string, string>;
   checker: Record<string, string>;

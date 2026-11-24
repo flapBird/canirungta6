@@ -41,10 +41,10 @@ describe("localized dictionaries", () => {
 });
 
 describe("routes and metadata", () => {
-  it("defines 12 unique core business URLs", () => {
+  it("defines 15 unique primary navigation URLs", () => {
     const urls = locales.flatMap((locale) => businessPages.map((page) => localePath(page, locale)));
-    expect(urls).toHaveLength(12);
-    expect(new Set(urls).size).toBe(12);
+    expect(urls).toHaveLength(15);
+    expect(new Set(urls).size).toBe(15);
     expect(localePath("home", "en")).toBe("/");
     expect(localePath("home", "es")).toBe("/es/");
     expect(localePath("home", "ar")).toBe("/ar/");

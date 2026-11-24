@@ -1,7 +1,7 @@
 {
   "localeName": "Español",
   "direction": "ltr",
-  "nav": { "checker": "Comprobador de PC", "leonida": "Leonida", "requirements": "Requisitos", "status": "Estado del PC", "guides": "Guías" },
+  "nav": { "checker": "Comprobador de PC", "leonida": "Leonida", "port": "Ports para PC", "requirements": "Requisitos", "status": "Estado del PC", "guides": "Guías" },
   "common": {
     "brandTagline": "Herramientas independientes para comprobar si tu PC está listo",
     "skip": "Saltar al contenido principal",
@@ -17,6 +17,9 @@
     "unavailable": "No disponible",
     "primaryNav": "Navegación principal",
     "mobileNav": "Navegación móvil",
+    "footerTools": "Herramientas de PC",
+    "footerSite": "Sobre el sitio",
+    "footerCookies": "Política de cookies",
     "footerNav": "Navegación del pie",
     "breadcrumb": "Ruta de navegación",
     "forecast": "Estimación",
