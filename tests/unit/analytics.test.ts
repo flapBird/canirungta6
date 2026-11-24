@@ -1,17 +1,15 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
-  CONSENT_KEY,
+  GTM_CONTAINER_ID,
   PRODUCTION_ANALYTICS_ORIGIN,
   cleanAnalyticsLocation,
-  getAnalyticsConsent,
   isProductionAnalyticsLocation,
-  setAnalyticsConsent,
   trackEvent,
 } from "@/lib/analytics";
 
-function mockBrowser(href: string, consent: string | null = null) {
+function mockBrowser(href: string, legacyConsent: string | null = null) {
   const values = new Map<string, string>();
-  if (consent !== null) values.set(CONSENT_KEY, consent);
+  if (legacyConsent !== null) values.set("vi-ready-analytics-consent-v1", legacyConsent);
   const storage = {
     getItem: vi.fn((key: string) => values.get(key) ?? null),
     setItem: vi.fn((key: string, value: string) => values.set(key, value)),
@@ -19,17 +17,15 @@ function mockBrowser(href: string, consent: string | null = null) {
   const browser: {
     location: { href: string };
     dataLayer: unknown[];
-    dispatchEvent: ReturnType<typeof vi.fn>;
     gtmContainerId?: string;
     gtag?: (...args: unknown[]) => void;
   } = {
     location: { href },
     dataLayer: [],
-    dispatchEvent: vi.fn(),
   };
   vi.stubGlobal("window", browser);
   vi.stubGlobal("localStorage", storage);
-  return { browser, storage, values };
+  return { browser, storage };
 }
 
 afterEach(() => {
@@ -37,8 +33,9 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-describe("analytics origin and consent", () => {
-  it("allows only the exact HTTPS production origin", () => {
+describe("analytics origin", () => {
+  it("ships the supplied GTM container and allows only the exact HTTPS production origin", () => {
+    expect(GTM_CONTAINER_ID).toBe("GTM-PFZF34QK");
     expect(PRODUCTION_ANALYTICS_ORIGIN).toBe("https://canirungta6.online");
     expect(isProductionAnalyticsLocation("https://canirungta6.online/")).toBe(true);
     expect(isProductionAnalyticsLocation("https://canirungta6.online/gta-6-pc/?cpu=test#result")).toBe(true);
@@ -51,26 +48,6 @@ describe("analytics origin and consent", () => {
     expect(isProductionAnalyticsLocation("not a URL")).toBe(false);
   });
 
-  it("distinguishes no choice, rejection, and acceptance", () => {
-    mockBrowser("https://canirungta6.online/");
-    expect(getAnalyticsConsent()).toBeNull();
-    setAnalyticsConsent(true);
-    expect(getAnalyticsConsent()).toBe("granted");
-    setAnalyticsConsent(false);
-    expect(getAnalyticsConsent()).toBe("denied");
-  });
-
-  it("treats unknown or unavailable consent storage as no choice", () => {
-    mockBrowser("https://canirungta6.online/", "unexpected");
-    expect(getAnalyticsConsent()).toBeNull();
-    vi.stubGlobal("localStorage", {
-      getItem: () => {
-        throw new Error("storage blocked");
-      },
-    });
-    expect(getAnalyticsConsent()).toBeNull();
-  });
-
   it("removes query strings and hashes from analytics page locations", () => {
     expect(cleanAnalyticsLocation("https://canirungta6.online/gta-6-pc/?cpu=secret&gpu=secret#result")).toBe("https://canirungta6.online/gta-6-pc/");
     expect(cleanAnalyticsLocation("https://canirungta6.online/?cpu=secret#result")).toBe("https://canirungta6.online/");
@@ -78,23 +55,29 @@ describe("analytics origin and consent", () => {
 });
 
 describe("analytics event dispatch", () => {
-  it("does not send events from local hosts even with granted consent", () => {
-    const { browser } = mockBrowser("http://127.0.0.1:4173/", "granted");
-    browser.gtmContainerId = "GTM-TEST";
+  it("does not send events from local hosts even with a legacy granted consent value", () => {
+    const { browser, storage } = mockBrowser("http://127.0.0.1:4173/", "granted");
+    browser.gtmContainerId = GTM_CONTAINER_ID;
     trackEvent("checker_completed", { profile: "gta6-unknown" });
     expect(browser.dataLayer).toEqual([]);
+    expect(storage.getItem).not.toHaveBeenCalled();
   });
 
-  it("does not send events from production without granted consent", () => {
-    const { browser } = mockBrowser("https://canirungta6.online/", "denied");
-    browser.gtmContainerId = "GTM-TEST";
+  it("ignores legacy consent choices on the production origin", () => {
+    const { browser, storage } = mockBrowser("https://canirungta6.online/", "denied");
+    browser.gtmContainerId = GTM_CONTAINER_ID;
     trackEvent("checker_completed", { profile: "gta6-unknown" });
-    expect(browser.dataLayer).toEqual([]);
+    expect(browser.dataLayer).toEqual([{
+      event: "checker_completed",
+      profile: "gta6-unknown",
+      page_location: "https://canirungta6.online/",
+    }]);
+    expect(storage.getItem).not.toHaveBeenCalled();
   });
 
-  it("uses sanitized GTM dataLayer events after production consent", () => {
-    const { browser } = mockBrowser("https://canirungta6.online/gta-6-pc/?cpu=secret#result", "granted");
-    browser.gtmContainerId = "GTM-TEST";
+  it("uses sanitized GTM dataLayer events on the production origin", () => {
+    const { browser } = mockBrowser("https://canirungta6.online/gta-6-pc/?cpu=secret#result");
+    browser.gtmContainerId = GTM_CONTAINER_ID;
     trackEvent("checker_completed", { profile: "gta6-unknown", estimated: false });
     expect(browser.dataLayer).toEqual([{
       event: "checker_completed",
@@ -104,10 +87,10 @@ describe("analytics event dispatch", () => {
     }]);
   });
 
-  it("falls back to direct GA4 only when GTM is not configured", () => {
-    const { browser } = mockBrowser("https://canirungta6.online/?cpu=secret", "granted");
+  it("uses an available gtag queue when GTM has not initialized", () => {
+    const { browser } = mockBrowser("https://canirungta6.online/?cpu=secret");
     const gtag = vi.fn();
-    Object.assign(browser, { gtag });
+    browser.gtag = gtag;
     trackEvent("checker_completed", { profile: "leonida-historical" });
     expect(gtag).toHaveBeenCalledWith("event", "checker_completed", {
       profile: "leonida-historical",

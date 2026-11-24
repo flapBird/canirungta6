@@ -1,8 +1,8 @@
-export const CONSENT_KEY = "vi-ready-analytics-consent-v1";
 export const PRODUCTION_ANALYTICS_ORIGIN = "https://canirungta6.online";
+export const GTM_CONTAINER_ID = "GTM-PFZF34QK";
+export const CLARITY_PROJECT_ID = "";
 
 type AnalyticsParams = Record<string, string | number | boolean>;
-type AnalyticsConsent = "granted" | "denied" | null;
 
 declare global {
   interface Window {
@@ -11,28 +11,6 @@ declare global {
     dataLayer?: unknown[];
     gtmContainerId?: string;
   }
-}
-
-export function getAnalyticsConsent(): AnalyticsConsent {
-  try {
-    const value = localStorage.getItem(CONSENT_KEY);
-    return value === "granted" || value === "denied" ? value : null;
-  } catch {
-    return null;
-  }
-}
-
-export function hasAnalyticsConsent(): boolean {
-  return getAnalyticsConsent() === "granted";
-}
-
-export function setAnalyticsConsent(granted: boolean): void {
-  try {
-    localStorage.setItem(CONSENT_KEY, granted ? "granted" : "denied");
-  } catch {
-    return;
-  }
-  window.dispatchEvent(new CustomEvent("analytics-consent-changed"));
 }
 
 export function isProductionAnalyticsLocation(href: string): boolean {
@@ -44,7 +22,7 @@ export function isProductionAnalyticsLocation(href: string): boolean {
 }
 
 export function trackEvent(name: string, params: AnalyticsParams = {}): void {
-  if (typeof window === "undefined" || !isProductionAnalyticsLocation(window.location.href) || !hasAnalyticsConsent()) return;
+  if (typeof window === "undefined" || !isProductionAnalyticsLocation(window.location.href)) return;
   const safeParams = Object.fromEntries(
     Object.entries(params).filter(([, value]) => ["string", "number", "boolean"].includes(typeof value)),
   );

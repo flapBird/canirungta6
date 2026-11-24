@@ -51,11 +51,8 @@ Copy `.env.example` to `.env.local` for development, or configure the same varia
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Production builds | Absolute non-local HTTPS origin used for canonical URLs, hreflang, sitemap, robots, and structured data. |
-| `NEXT_PUBLIC_GTM_ID` | No | Google Tag Manager container ID. Takes precedence over `NEXT_PUBLIC_GA_ID` when both are set. |
-| `NEXT_PUBLIC_GA_ID` | No | Direct GA4 measurement ID fallback when no GTM container is configured. |
-| `NEXT_PUBLIC_CLARITY_ID` | No | Clarity project ID. No analytics code is loaded when omitted. |
 
-Analytics requires both explicit consent and the exact HTTPS origin `https://canirungta6.online`. Localhost, preview domains, HTTP, lookalike domains, and every other origin remain blocked even when a production consent value already exists. The site supplies a sanitized initial `page_location` without query strings or hashes; GTM/GA4 tags must be configured in the tag dashboard to use sanitized locations and avoid capturing hardware parameters or form values. Form and result regions use Clarity masking, and raw renderer strings, machine names, serial numbers, imported files, and free-text searches are not sent as analytics parameters.
+The GTM container `GTM-PFZF34QK` is hardcoded in `src/lib/analytics.ts`; no analytics environment variables or Cloudflare dashboard secrets are required. Analytics loads automatically only on the exact HTTPS origin `https://canirungta6.online`, with no consent prompt or consent key. Localhost, preview domains, HTTP, lookalike domains, and every other origin remain blocked. The site supplies a sanitized initial `page_location` without query strings or hashes; GTM/GA4 tags must be configured in the tag dashboard to use sanitized locations and avoid capturing hardware parameters or form values. If Clarity is configured in code, form and result regions are masked. Raw renderer strings, machine names, serial numbers, imported files, and free-text searches are not sent as analytics parameters.
 
 The checked-in `.env.production` uses the production origin `https://canirungta6.online`. The published contact address is `support@canirungta6.online`. Rebuild after changing the origin or contact information.
 
@@ -70,7 +67,7 @@ Configure the Pages project under **Settings → Builds and deployments**:
 - **Build output directory:** `out`
 - **Root directory:** repository root
 - **Node.js version:** 24.x recommended
-- **Environment variables:** set `NEXT_PUBLIC_SITE_URL` and any optional analytics IDs; the checked-in `.env.production` supplies the production origin and GTM container
+- **Environment variables:** the checked-in `.env.production` supplies `NEXT_PUBLIC_SITE_URL`; the GTM container is hardcoded in the application
 
 Do not use `npx opennextjs-cloudflare build` for this repository. OpenNext is for Next.js applications running on Cloudflare Workers and requires an `open-next.config.ts`; this site intentionally uses `output: "export"` and has no Worker runtime or independent backend. If a failed build shows the OpenNext command, correct the Pages build command above and retry the deployment.
 
@@ -181,16 +178,16 @@ The checker uses a whitelist of hardware IDs, enum values, and bounded numeric p
 
 ## Testing scope
 
-Unit tests cover same-dataset benchmark comparison, null/zero handling, GTA VI Unknown policy, Leonida historical matching, independent playability status, capacity gaps, RTX 3060 variants, software renderers, URL safety, dataset validation, dictionary parity, canonical URLs, hreflang, DxDiag parsing and sensitive-field exclusion, source-check behavior, nested guide routes, evidence integrity, local progress filtering, analytics origin allowlisting, tri-state consent, location sanitization, local event suppression, and GTM/direct-GA4 dispatch.
+Unit tests cover same-dataset benchmark comparison, null/zero handling, GTA VI Unknown policy, Leonida historical matching, independent playability status, capacity gaps, RTX 3060 variants, software renderers, URL safety, dataset validation, dictionary parity, canonical URLs, hreflang, DxDiag parsing and sensitive-field exclusion, source-check behavior, nested guide routes, evidence integrity, local progress filtering, analytics origin allowlisting, legacy-consent independence, location sanitization, local event suppression, and GTM/gtag dispatch.
 
-Playwright covers the acceptance matrix in Chromium: 12 static business routes, 18 localized guide routes, 9 localized policy routes, production stylesheet loading, empty state, keyboard selection, detection fallback, low-reference explanations, benchmark gaps, Leonida non-playability, OS/Vulkan uncertainty, share recovery, language preservation, Arabic RTL, 320–1440px layouts, production-domain canonical/hreflang/sitemap output, legal-page navigation and contact links, zero local analytics requests with and without prior consent, stale evidence labels, same-profile upgrade simulation, local DxDiag import with trilingual PNG downloads, checklist persistence/reset, corrupt-progress filtering, and money-page link safety.
+Playwright covers the acceptance matrix in Chromium: 12 static business routes, 18 localized guide routes, 9 localized policy routes, production stylesheet loading, empty state, keyboard selection, detection fallback, low-reference explanations, benchmark gaps, Leonida non-playability, OS/Vulkan uncertainty, share recovery, language preservation, Arabic RTL, 320–1440px layouts, production-domain canonical/hreflang/sitemap output, legal-page navigation and contact links, zero local analytics requests with no consent prompt, stale evidence labels, same-profile upgrade simulation, local DxDiag import with trilingual PNG downloads, checklist persistence/reset, corrupt-progress filtering, and money-page link safety.
 
 P2 remains out of scope. Qualitative multi-resolution performance models and laptop TGP comparisons require reliable external evidence and are not implemented. The requested guide expansion is complete; T3-code pages are intentionally excluded.
 
 ## Release verification (2026-11-24)
 
 - Clean `npm ci` on Node.js 24.19.0 completed with zero audit vulnerabilities.
-- TypeScript, ESLint, data validation, 69 unit tests, static export, and 26 Chromium acceptance tests passed.
+- TypeScript, ESLint, data validation, 67 unit tests, static export, and 26 Chromium acceptance tests passed.
 - All 12 core pages, 18 localized guide pages, and 9 localized policy pages export without error-page markers or unresolved content placeholders.
 - Browser checks covered 10 desktop/mobile English, Spanish, and Arabic route/viewport combinations plus 6 legal-page desktop/mobile combinations. Every page had zero horizontal overflow and no console/runtime errors; checklist state persisted after reload and no analytics requests were sent.
 - Canonical URLs, hreflang, structured-data origins, sitemap, and robots use `https://canirungta6.online`; the generated sitemap contains 45 unique localized URLs and no provisional-domain references.
@@ -206,7 +203,7 @@ Full results are recorded in `reports/lighthouse-home-mobile.json`, `reports/lig
 
 The live source check in `reports/source-check-2026-11-24.json` found 49/53 sources accessible. The four inaccessible records are the three already-stale Leonida sources and games.gg, which now records HTTP 403 and unavailable/stale state; Bilibili and Rockstar's official credits responded successfully.
 
-Not verified in this environment: Firefox/WebKit, the live GTM/GA4 consent and tag-delivery flow, field real-user Core Web Vitals, DNS/TLS and the live `https://canirungta6.online` deployment. Local and preview zero-request behavior is covered by unit and Chromium tests. Official GTA VI PC requirements and reproducible PC benchmark evidence remain unavailable, so production capability results stay Unknown.
+Not verified in this environment: Firefox/WebKit, the live GTM/GA4 tag-delivery flow, field real-user Core Web Vitals, DNS/TLS and the live `https://canirungta6.online` deployment. Local and preview zero-request behavior and consent-prompt removal are covered by unit and Chromium tests. Official GTA VI PC requirements and reproducible PC benchmark evidence remain unavailable, so production capability results stay Unknown.
 
 ## Independence
 

@@ -11,7 +11,7 @@ export function SiteShell({ locale, dictionary, children }: { locale: Locale; di
         <SiteHeader locale={locale} dictionary={dictionary} />
         <main id="main-content" className="min-h-[60vh]">{children}</main>
         <SiteFooter locale={locale} dictionary={dictionary} />
-        <Analytics locale={locale} dictionary={dictionary} />
+        <Analytics />
       </body>
     </html>
   );

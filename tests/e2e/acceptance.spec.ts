@@ -289,24 +289,22 @@ test("A15: sitemap and robots expose only real indexable paths", async ({ reques
   expect(robots).not.toContain("Disallow:");
 });
 
-test("A16: local testing sends no analytics requests even with prior consent", async ({ page }) => {
+test("A16: local testing sends no analytics requests and shows no consent prompt", async ({ page }) => {
   const requests: string[] = [];
   const errors = collectRuntimeErrors(page);
   page.on("request", (request) => requests.push(`${request.method()} ${request.url()}`));
-  for (const consent of [null, "granted"]) {
-    if (consent) {
-      await page.evaluate((value) => localStorage.setItem("vi-ready-analytics-consent-v1", value), consent);
-    }
-    await page.goto("/");
-    await selectHardware(page, "Core i5-12400F", "RTX 3060 12GB");
-    await page.getByLabel("Memory (RAM)").selectOption("16");
-    await page.getByRole("button", { name: "Check My PC" }).click();
-    await expect(page.locator('[aria-live="polite"]')).toContainText("Not enough information");
-    await expect(page.getByRole("button", { name: "Accept optional analytics" })).toHaveCount(0);
-    await expect(page.locator('script[src*="googletagmanager.com/gtm.js"]')).toHaveCount(0);
-    await expect(page.locator('script[src*="google-analytics.com"]')).toHaveCount(0);
-    await expect(page.locator('script[src*="clarity.ms"]')).toHaveCount(0);
-  }
+  await page.addInitScript(() => localStorage.setItem("vi-ready-analytics-consent-v1", "granted"));
+  await page.goto("/");
+  await selectHardware(page, "Core i5-12400F", "RTX 3060 12GB");
+  await page.getByLabel("Memory (RAM)").selectOption("16");
+  await page.getByRole("button", { name: "Check My PC" }).click();
+  await expect(page.locator('[aria-live="polite"]')).toContainText("Not enough information");
+  await expect(page.getByRole("heading", { name: "Optional analytics" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Accept optional analytics" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Decline" })).toHaveCount(0);
+  await expect(page.locator('script[src*="googletagmanager.com/gtm.js"]')).toHaveCount(0);
+  await expect(page.locator('script[src*="google-analytics.com"]')).toHaveCount(0);
+  await expect(page.locator('script[src*="clarity.ms"]')).toHaveCount(0);
   expect(requests.some((request) => /googletagmanager|google-analytics|clarity\.ms/.test(request))).toBe(false);
   expect(requests.some((request) => request.startsWith("POST "))).toBe(false);
   expect(requests.some((request) => /serial|renderer|machine|fingerprint/i.test(request))).toBe(false);
