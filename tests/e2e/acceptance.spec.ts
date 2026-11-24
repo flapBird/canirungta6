@@ -169,16 +169,15 @@ test("Report, copied link and PNG keep the submitted hardware until the next che
   expect((await reportImage()).equals(submittedImage)).toBe(false);
 });
 
-test("A07: missing production benchmarks stay Unknown in the UI", async ({ page }) => {
+test("A07: desktop GPUs receive a console estimate without a PC benchmark", async ({ page }) => {
   await page.goto("/");
   await selectHardware(page, "Core i5-12400F", "RTX 3060 12GB");
   await page.getByLabel("Memory (RAM)").selectOption("32");
   await page.getByRole("button", { name: "Check My PC" }).click();
   const result = page.locator('[aria-live="polite"]');
-  await expect(result).toContainText("Not enough information");
+  await expect(result).toContainText("GPU near console reference");
   await expect(result).toContainText("No verified GTA 6 CPU reference or benchmark exists.");
-  await expect(result).toContainText("No verified GTA 6 GPU reference or benchmark exists.");
-  await expect(result).toContainText("No production benchmark scores are loaded");
+  await expect(result).toContainText("No GTA VI PC game benchmark is available");
 });
 
 test("A08: a full Leonida hardware match still has no verified playable build", async ({ page }) => {
@@ -296,7 +295,8 @@ test("A14: parameterized ES/AR pages keep clean self-language canonical and href
   ] as const) {
     const html = await (await request.get(path)).text();
     expect(html).toContain(`<link rel="canonical" href="${canonical}"`);
-    expect(html).toContain(`<link rel="alternate" hrefLang="${language}" href="${canonical}"`);
+    expect(html).not.toContain('hrefLang="ar"');
+    if (language === "es") expect(html).toContain(`<link rel="alternate" hrefLang="${language}" href="${canonical}"`);
     expect(html).toContain('<link rel="alternate" hrefLang="en" href="https://canirungta6.online/can-i-run-leonida/"');
     expect(html).not.toContain('<link rel="canonical" href="https://canirungta6.online/es/can-i-run-leonida/?');
     expect(html).not.toContain('<meta name="robots" content="noindex');
@@ -306,16 +306,17 @@ test("A14: parameterized ES/AR pages keep clean self-language canonical and href
 test("A15: sitemap and robots expose only real indexable paths", async ({ request }) => {
   const sitemap = await (await request.get("/sitemap.xml")).text();
   const locations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  expect(locations).toHaveLength(45);
-  expect(new Set(locations).size).toBe(45);
+  expect(locations).toHaveLength(38);
+  expect(new Set(locations).size).toBe(38);
   expect(locations.every((url) => !url.includes("?"))).toBe(true);
   expect(locations.every((url) => url.startsWith(origin))).toBe(true);
   expect(sitemap).not.toContain("vi-ready.pages.dev");
-  for (const path of corePaths) {
+  expect(locations.some((url) => new URL(url).pathname.startsWith("/ar/"))).toBe(false);
+  for (const path of corePaths.filter((url) => !url.startsWith("/ar/"))) {
     expect(locations).toContain(`${origin}${path}`);
   }
   for (const page of ["privacy", "terms", "cookies"] as const) {
-    for (const locale of ["en", "es", "ar"] as const) {
+    for (const locale of ["en", "es"] as const) {
       expect(locations).toContain(`${origin}/${routes[page][locale]}/`);
     }
   }
@@ -335,7 +336,7 @@ test("A16: local testing sends no analytics requests and shows no consent prompt
   await selectHardware(page, "Core i5-12400F", "RTX 3060 12GB");
   await page.getByLabel("Memory (RAM)").selectOption("16");
   await page.getByRole("button", { name: "Check My PC" }).click();
-  await expect(page.locator('[aria-live="polite"]')).toContainText("Not enough information");
+  await expect(page.locator('[aria-live="polite"]')).toContainText("GPU near console reference");
   await expect(page.getByRole("heading", { name: "Optional analytics" })).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Accept optional analytics" })).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Decline" })).toHaveCount(0);
@@ -476,4 +477,20 @@ test("A22: DxDiag stays local and PNG sharing works in all three languages", asy
   expect(requests.some((request) => request.startsWith("POST "))).toBe(false);
   expect(requests.some((request) => /SECRET|serial|machine|fingerprint/i.test(request))).toBe(false);
   expect(errors).toEqual([]);
+});
+
+test("Port comparison, official news and hardware forecasts have distinct content", async ({ page }) => {
+  await page.goto("/gta-6-port/");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Unofficial");
+  for (const project of ["VIctory", "XCL", "Leonida"]) {
+    await expect(page.getByRole("rowheader", { name: project, exact: true })).toBeVisible();
+  }
+  await page.getByRole("article").getByRole("link", { name: "GTA 6 PC Release News and Announcement Timeline" }).click();
+  await expect(page.locator("article time")).toHaveCount(3);
+  await expect(page.locator("article table")).toHaveCount(0);
+  await page.getByRole("article").getByRole("link", { name: /Requirements Forecast/ }).click();
+  await expect(page.getByRole("table")).toBeVisible();
+  await page.getByRole("link", { name: "AMD Radeon RX 6600", exact: true }).click();
+  await page.getByRole("button", { name: "Check My PC" }).click();
+  await expect(page.locator('[aria-live="polite"]')).toContainText("GPU below console reference");
 });

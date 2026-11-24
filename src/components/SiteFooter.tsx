@@ -9,6 +9,7 @@ interface SiteFooterProps {
 export function SiteFooter({ locale, dictionary }: SiteFooterProps) {
   const links = [
     ["home", dictionary.nav.checker],
+    ["port", dictionary.seo.port.title],
     ["leonida", dictionary.nav.leonida],
     ["requirements", dictionary.nav.requirements],
     ["status", dictionary.nav.status],

@@ -90,9 +90,19 @@ export function evaluateCompatibility(
   const cpuSources = [...new Set([...(cpu?.sourceIds ?? []), ...profileSources])];
   const gpuSources = [...new Set([...(gpu?.sourceIds ?? []), ...profileSources])];
 
+  const compareConsole = profile.game === "gta6" && profile.evidenceKind === "forecast" && !!profile.consoleGpuBands;
+  const consoleBand = compareConsole && !profile.stale && specs.deviceType === "desktop" && gpu?.deviceType === "desktop"
+    ? (["consoleBelow", "consoleNear", "consoleAbove"] as const).find((band) => profile.consoleGpuBands?.[band].includes(gpu.id))
+    : undefined;
+
+  const bandStatus = { consoleBelow: "below", consoleNear: "near", consoleAbove: "meets" } as const;
+  const gpuResult: ComponentResult = consoleBand
+    ? { key: "gpu", status: bandStatus[consoleBand], ratio: null, sourceIds: gpuSources, reasonKey: consoleBand }
+    : referenceComponent("gpu", specs.gpuId, profile.referenceGpuIds, gpu?.rasterScore ?? null, profile.gpuTarget, gpuSources, profile);
+
   const components: ComponentResult[] = [
     referenceComponent("cpu", specs.cpuId, profile.referenceCpuIds, cpu?.gamingScore ?? null, profile.cpuTarget, cpuSources, profile),
-    referenceComponent("gpu", specs.gpuId, profile.referenceGpuIds, gpu?.rasterScore ?? null, profile.gpuTarget, gpuSources, profile),
+    gpuResult,
     capacityComponent("ram", specs.ramGB, profile.ramGB, profileSources, profile.game),
   ];
 
@@ -145,7 +155,7 @@ export function evaluateCompatibility(
     ...(specs.deviceType === "laptop" ? ["limitation.laptop"] : []),
   ];
 
-  let tier: CompatibilityResult["tier"] = "unknown";
+  let tier: CompatibilityResult["tier"] = consoleBand ?? "unknown";
   if (!profile.stale && profile.confidence !== "unknown" && profile.evidenceKind === "official") {
     const core = components.filter((component) => ["cpu", "gpu", "ram"].includes(component.key));
     if (core.every((component) => component.status === "meets")) tier = "likely";
@@ -159,7 +169,7 @@ export function evaluateCompatibility(
     profileVersion: profile.version,
     availability: status.availability,
     tier,
-    confidence: profile.confidence,
+    confidence: compareConsole && !consoleBand ? "unknown" : profile.confidence,
     components,
     limitations,
     missingFields,

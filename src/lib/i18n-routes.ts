@@ -10,9 +10,9 @@ export function localePath(page: PageId, locale: Locale): string {
   return slug ? `/${slug}/` : "/";
 }
 
-export const parentPages: Partial<Record<PageId, PageId>> = { chapter3: "chapters", chapter4: "chapters", mandy: "characters" };
+export const parentPages: Partial<Record<PageId, PageId>> = { chapter1: "chapters", chapter2: "chapters", chapter5: "chapters", chapter3: "chapters", chapter4: "chapters", mandy: "characters" };
 
-export const guidePages = ["chapters", "chapter3", "chapter4", "characters", "mandy", "money"] as const satisfies readonly PageId[];
+export const guidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money"] as const satisfies readonly PageId[];
 
 export function isGuidePage(page: PageId): boolean {
   return (guidePages as readonly PageId[]).includes(page);
@@ -67,7 +67,7 @@ export function isLocale(value: string): value is Locale {
 
 export function alternateLinks(page: PageId, origin: string) {
   return [
-    ...locales.map((locale) => ({ hrefLang: locale, href: `${origin}${localePath(page, locale)}` })),
+    ...(["en", "es"] as const).map((locale) => ({ hrefLang: locale, href: `${origin}${localePath(page, locale)}` })),
     { hrefLang: "x-default", href: `${origin}${localePath(page, "en")}` },
   ];
 }

@@ -610,5 +610,115 @@
     "checkedAt": "2026-11-24",
     "license": null,
     "notes": "Single user video claiming about $3,600 per loop and a $20,000 wallet limit. Unverified community report."
+  },
+  {
+    "id": "ps5-spec",
+    "publisher": "PlayStation",
+    "title": "Base PS5 technical specifications",
+    "url": "https://blog.playstation.com/2020/03/18/unveiling-new-details-of-playstation-5-hardware-technical-specs/",
+    "kind": "official",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "xsx-spec",
+    "publisher": "Xbox Wire",
+    "title": "Xbox Series X architecture",
+    "url": "https://news.xbox.com/en-us/2020/03/16/xbox-series-x-tech/",
+    "kind": "official",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "df-ps5",
+    "publisher": "Digital Foundry",
+    "title": "Radeon RX 6700 compared with PS5",
+    "url": "https://www.youtube.com/watch?v=PuLHRbalyGs",
+    "kind": "self-test",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "gpu-raster",
+    "publisher": "Tom’s Hardware",
+    "title": "Desktop raster hierarchy, 2022–2024 suite",
+    "url": "https://www.tomshardware.com/reviews/gpu-hierarchy,4388-2.html",
+    "kind": "self-test",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "gpu-current",
+    "publisher": "Tom’s Hardware",
+    "title": "Desktop raster hierarchy, current suite",
+    "url": "https://www.tomshardware.com/reviews/gpu-hierarchy,4388.html",
+    "kind": "self-test",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "3060-variants",
+    "publisher": "TechSpot",
+    "title": "RTX 3060 8 GB and 12 GB compared",
+    "url": "https://www.techspot.com/review/2581-nvidia-rtx-3060-8gb/",
+    "kind": "self-test",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "victory-readme",
+    "publisher": "Marvisak/VIctory",
+    "title": "VIctory project status and test hardware",
+    "url": "https://github.com/Marvisak/VIctory/blob/main/README.md",
+    "kind": "upstream",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "xcl-world",
+    "publisher": "XCL issue tracker",
+    "title": "Retail build world-loading report #646",
+    "url": "https://github.com/ivall/xcl/issues/646",
+    "kind": "community",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "tracker-copies",
+    "publisher": "PortWatch VI",
+    "title": "Tracker report on duplicate repositories",
+    "url": "https://4lwayz.github.io/portwatch-vi/news/2026-11-22-copies.html",
+    "kind": "community",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "initial-platforms",
+    "publisher": "Take-Two Interactive",
+    "title": "Initial GTA VI platform announcement",
+    "url": "https://www.take2games.com/ir/news/rockstar-games-announces-grand-theft-auto-vi-coming-2025",
+    "kind": "official",
+    "checkedAt": "2026-11-25",
+    "accessible": true,
+    "stale": false,
+    "license": null
   }
 ]

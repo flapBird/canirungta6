@@ -1,7 +1,7 @@
 {
-  "id": "gta6-reference-unknown",
+  "id": "gta6-console-gpu",
   "game": "gta6",
-  "version": "2026-11-24.1",
+  "version": "2026-11-25.1",
   "evidenceKind": "forecast",
   "referenceCpuIds": [],
   "referenceGpuIds": [],
@@ -16,8 +16,43 @@
   "storageReferenceGB": null,
   "storageStage": null,
   "resolution": "unknown",
-  "sourceIds": ["rockstar-gta6-out-now", "rockstar-gta6-platforms"],
-  "reviewedAt": "2026-11-24",
-  "confidence": "unknown",
-  "stale": false
+  "sourceIds": [
+    "rockstar-gta6-out-now",
+    "rockstar-gta6-platforms",
+    "ps5-spec",
+    "xsx-spec",
+    "df-ps5",
+    "gpu-raster",
+    "gpu-current",
+    "3060-variants"
+  ],
+  "reviewedAt": "2026-11-25",
+  "confidence": "low",
+  "stale": false,
+  "consoleGpuBands": {
+    "consoleBelow": [
+      "nvidia-rtx-3060-8gb-desktop",
+      "amd-rx-6600-desktop"
+    ],
+    "consoleNear": [
+      "nvidia-rtx-3060-12gb-desktop",
+      "nvidia-rtx-3060-ti-desktop",
+      "nvidia-rtx-3070-desktop",
+      "nvidia-rtx-4060-8gb-desktop",
+      "amd-rx-6700-xt-desktop",
+      "amd-rx-7600-desktop"
+    ],
+    "consoleAbove": [
+      "nvidia-rtx-4070-12gb-desktop",
+      "nvidia-rtx-5060-desktop",
+      "nvidia-rtx-5070-desktop",
+      "amd-rx-6800-desktop",
+      "amd-rx-7800-xt-desktop",
+      "nvidia-rtx-5090-desktop",
+      "nvidia-rtx-5080-desktop",
+      "nvidia-rtx-5070-ti-desktop",
+      "amd-rx-9070-xt-desktop",
+      "amd-rx-7900-xtx-desktop"
+    ]
+  }
 }

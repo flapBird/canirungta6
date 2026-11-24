@@ -4,6 +4,9 @@ import type { Locale } from "@/lib/types";
 
 const numbers: Record<GuidePage, string> = {
   chapters: "01",
+  chapter1: "01",
+  chapter2: "02",
+  chapter5: "05",
   chapter3: "03",
   chapter4: "04",
   characters: "02",

@@ -2,7 +2,8 @@ export type Locale = "en" | "es" | "ar";
 export type GameId = "gta6" | "leonida";
 export type DeviceType = "desktop" | "laptop" | "integrated" | "other";
 export type Availability = "unannounced" | "not-verified-playable" | "verified-playable" | "unknown";
-export type Tier = "unlikely" | "borderline" | "likely" | "strong" | "unknown";
+export type ConsoleBand = "consoleBelow" | "consoleNear" | "consoleAbove";
+export type Tier = ConsoleBand | "unlikely" | "borderline" | "likely" | "strong" | "unknown";
 export type ComponentStatus = "meets" | "below" | "near" | "unknown" | "not-applicable";
 export type Confidence = "low" | "medium" | "high" | "unknown";
 export type Resolution = "1080p" | "1440p" | "2160p";
@@ -86,6 +87,7 @@ export interface RequirementProfile {
   game: GameId;
   version: string;
   evidenceKind: "forecast" | "historical-community" | "official";
+  consoleGpuBands?: Record<ConsoleBand, string[]>;
   referenceCpuIds: string[];
   referenceGpuIds: string[];
   cpuMetric: "gamingScore";
@@ -144,6 +146,7 @@ export interface Dictionary {
   guides: Record<string, string>;
   checker: Record<string, string>;
   leonida: Record<string, string>;
+  port: Record<string, string>;
   requirements: Record<string, string>;
   status: Record<string, string>;
   support: Record<string, string>;

@@ -1,6 +1,6 @@
 import guideData from "@/data/guides.json";
 
-export type ChapterDetailPage = "chapter3" | "chapter4";
+export type ChapterDetailPage = `chapter${1 | 2 | 3 | 4 | 5}`;
 export type GuidePage = "chapters" | ChapterDetailPage | "characters" | "mandy" | "money";
 
 export interface GuideChapter {
@@ -10,7 +10,7 @@ export interface GuideChapter {
   reportedMissions: number;
   optionalMissions: number;
   redacted: number;
-  page: ChapterDetailPage | null;
+  page: ChapterDetailPage;
   sourceIds: string[];
 }
 
@@ -41,7 +41,7 @@ export interface MoneyMethod {
 export const guideDataset = guideData as {
   updatedAt: string;
   chapters: GuideChapter[];
-  missionLists: Record<ChapterDetailPage, Mission[]>;
+  missionLists: Record<"chapter3" | "chapter4", Mission[]>;
   characters: GuideCharacter[];
   moneyMethods: MoneyMethod[];
   pageSourceIds: Record<GuidePage, string[]>;

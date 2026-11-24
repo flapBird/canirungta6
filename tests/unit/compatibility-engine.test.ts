@@ -41,7 +41,7 @@ describe("benchmark comparison", () => {
 });
 
 describe("GTA 6 evidence policy", () => {
-  it("always returns Unknown without official PC evidence, even for premium hardware", () => {
+  it("reports a GPU-only console estimate independently of playability", () => {
     const result = evaluateCompatibility(specs({
       cpuId: "amd-ryzen-7-7800x3d",
       gpuId: "nvidia-rtx-5070-desktop",
@@ -50,14 +50,23 @@ describe("GTA 6 evidence policy", () => {
       architecture: "x64",
     }), gtaProfile, gtaStatus);
 
-    expect(result.tier).toBe("unknown");
-    expect(result.confidence).toBe("unknown");
+    expect(result.tier).toBe("consoleAbove");
+    expect(result.confidence).toBe("low");
     expect(result.availability).toBe("unannounced");
     expect(result.estimatedFps).toBeNull();
     expect(component(result, "cpu").status).toBe("unknown");
-    expect(component(result, "gpu").status).toBe("unknown");
+    expect(component(result, "gpu").status).toBe("meets");
     expect(component(result, "ram").status).toBe("unknown");
     expect(result.limitations).toContain("limitation.noOfficial");
+  });
+
+  it.each([
+    ["nvidia-rtx-3060-8gb-desktop", "consoleBelow"],
+    ["nvidia-rtx-3060-12gb-desktop", "consoleNear"],
+    ["nvidia-rtx-3060-laptop", "unknown"],
+    [null, "unknown"],
+  ])("compares the exact GPU variant %s", (gpuId, expected) => {
+    expect(evaluateCompatibility(specs({ gpuId }), gtaProfile, gtaStatus).tier).toBe(expected);
   });
 
   it("does not compare fixture scores across datasets or treat null as zero", () => {

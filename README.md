@@ -84,18 +84,23 @@ Each language has four core business pages, for 12 core URLs total:
 | PC requirements | `/gta-6-pc-requirements/` | `/es/requisitos-gta-6-pc/` | `/ar/gta-6-pc-requirements/` |
 | PC release status | `/gta-6-pc/` | `/es/gta-6-pc/` | `/ar/gta-6-pc/` |
 
-Guide pages add 18 localized URLs:
+The unofficial project comparison is available at `/gta-6-port/` (Spanish `/es/port-gta-6/`, Arabic `/ar/gta-6-port/`). The release page tracks dated announcements and the requirements page shows console-derived hardware estimates.
+
+Guide pages add 27 localized URLs:
 
 | Page | English | Spanish | Arabic |
 | --- | --- | --- | --- |
 | Chapters | `/gta-6-chapters/` | `/es/capitulos-gta-6/` | `/ar/فصول-gta-6/` |
+| Chapter 1 guide | `/gta-6-chapters/chapter-1/` | `/es/capitulos-gta-6/capitulo-1/` | `/ar/فصول-gta-6/الفصل-1/` |
+| Chapter 2 guide | `/gta-6-chapters/chapter-2/` | `/es/capitulos-gta-6/capitulo-2/` | `/ar/فصول-gta-6/الفصل-2/` |
+| Chapter 5 guide | `/gta-6-chapters/chapter-5/` | `/es/capitulos-gta-6/capitulo-5/` | `/ar/فصول-gta-6/الفصل-5/` |
 | Chapter 3 checklist | `/gta-6-chapters/chapter-3/` | `/es/capitulos-gta-6/capitulo-3/` | `/ar/فصول-gta-6/الفصل-3/` |
 | Chapter 4 checklist | `/gta-6-chapters/chapter-4/` | `/es/capitulos-gta-6/capitulo-4/` | `/ar/فصول-gta-6/الفصل-4/` |
 | Characters | `/characters/` | `/es/personajes/` | `/ar/الشخصيات/` |
 | Mandy | `/characters/mandy/` | `/es/personajes/mandy/` | `/ar/الشخصيات/ماندي/` |
 | Money | `/gta-6-money/` | `/es/dinero-gta-6/` | `/ar/مال-gta-6/` |
 
-Localized support and policy pages add 15 URLs, bringing the generated sitemap to **45 URLs**:
+Localized support and policy pages add 15 URLs, bringing the site to 57 static content URLs. The sitemap and hreflang list English and Spanish (38 URLs). Arabic pages retain their routes, canonicals and language switcher:
 
 | Page | English | Spanish | Arabic |
 | --- | --- | --- | --- |
@@ -109,12 +114,12 @@ The policy pages use an effective date of 2026-11-24, link to the published supp
 
 ## Data and evidence maintenance
 
-Current verified library coverage is **15 CPUs and 22 GPUs** (37 records), backed by **53 registered evidence sources**. This is intentionally smaller than an unverified bulk catalog.
+Current verified library coverage is **15 CPUs and 22 GPUs** (37 records), backed by **63 registered evidence sources**. This is intentionally smaller than an unverified bulk catalog.
 
 - `src/data/cpus.json`: CPU identities, variants, aliases, factual specifications, and source IDs.
 - `src/data/gpus.json`: GPU identities, desktop/laptop variants, VRAM, factual specifications, aliases, and source IDs.
 - `src/data/sources.json`: publisher, title, HTTPS URL, check date, accessibility, stale status, license, and notes.
-- `src/data/profiles/gta6.json`: official-evidence gap profile; no invented thresholds.
+- `src/data/profiles/gta6.json`: versioned desktop GPU bands derived from console hardware and comparative raster tests.
 - `src/data/profiles/leonida-low.json`: stale historical 1080p Low community profile.
 - `src/data/profiles/leonida-high.json`: stale historical console-comparable community profile.
 - `src/data/status/gta6.json`: official PC availability status.
@@ -154,13 +159,13 @@ The checker follows redirects, limits concurrent requests and response hashing, 
 - **Chapter checklists:** Chapter 3 has 27 reported entries including one optional mission; Chapter 4 has 25. GamesRadar redacts the final Chapter 4 title, so the secondary-source title is labeled separately. Counts are not presented as official Rockstar data.
 - **Local progress:** checkbox state uses the versioned `vi-ready-guide-progress-v1:` localStorage namespace, filters unknown and other-chapter IDs, requires two clicks to reset, and never uploads progress.
 - **Characters and Mandy:** Rockstar's credits support cast pairings. Mandy's fan theory is explicitly unconfirmed and separated from verified facts.
-- **Money:** methods and payouts are approximate secondary-source reports, with bank/cash distinctions and patch warnings. The page explicitly excludes game files, cracks, private servers, and T3-code routes and contains no links to them. PC-port claims remain on the existing status page.
+- **Money:** methods and payouts are approximate secondary-source reports, with bank/cash distinctions and patch warnings. The page explicitly excludes game files, cracks, private servers, and T3-code routes and contains no links to them. The unofficial port comparison lives at `/gta-6-port/`.
 
 Tailwind CSS and `@tailwindcss/postcss` are intentionally pinned to 4.3.3. Newer 4.3.x dependency resolution pulled an ESM-only `magic-string` version into a CommonJS build path and broke static CSS generation.
 
 ## Switching or versioning profiles
 
-Profiles are selected by stable ID and are rendered with their version and review date. Leonida uses its own profile selector; GTA VI currently has one unknown-reference profile.
+Profiles are selected by stable ID and are rendered with their version and review date. Leonida uses its own profile selector; GTA VI currently has one console GPU comparison profile.
 
 When reliable official PC requirements become available:
 
@@ -178,9 +183,9 @@ The checker uses a whitelist of hardware IDs, enum values, and bounded numeric p
 
 ## Testing scope
 
-Unit tests cover same-dataset benchmark comparison, null/zero handling, GTA VI Unknown policy, Leonida historical matching, independent playability status, capacity gaps, RTX 3060 variants, software renderers, URL safety, dataset validation, dictionary parity, canonical URLs, hreflang, DxDiag parsing and sensitive-field exclusion, source-check behavior, nested guide routes, evidence integrity, local progress filtering, analytics origin allowlisting, legacy-consent independence, location sanitization, local event suppression, and GTM/gtag dispatch.
+Unit tests cover same-dataset benchmark comparison, null/zero handling, GTA VI console GPU bands, Leonida historical matching, independent playability status, capacity gaps, RTX 3060 variants, software renderers, URL safety, dataset validation, dictionary parity, canonical URLs, hreflang, DxDiag parsing and sensitive-field exclusion, source-check behavior, nested guide routes, evidence integrity, local progress filtering, analytics origin allowlisting, legacy-consent independence, location sanitization, local event suppression, and GTM/gtag dispatch.
 
-Playwright covers the acceptance matrix in Chromium: 12 static business routes, 18 localized guide routes, 9 localized policy routes, production stylesheet loading, empty state, keyboard selection, detection fallback, low-reference explanations, benchmark gaps, Leonida non-playability, OS/Vulkan uncertainty, share recovery, language preservation, Arabic RTL, 320–1440px layouts, production-domain canonical/hreflang/sitemap output, legal-page navigation and contact links, zero local analytics requests with no consent prompt, stale evidence labels, same-profile upgrade simulation, local DxDiag import with trilingual PNG downloads, checklist persistence/reset, corrupt-progress filtering, and money-page link safety.
+Playwright covers the acceptance matrix in Chromium: 12 core checker and information routes, 27 localized guide routes, 9 localized policy routes, production stylesheet loading, empty state, keyboard selection, detection fallback, low-reference explanations, benchmark gaps, Leonida non-playability, OS/Vulkan uncertainty, share recovery, language preservation, Arabic RTL, 320–1440px layouts, production-domain canonical/hreflang/sitemap output, legal-page navigation and contact links, zero local analytics requests with no consent prompt, stale evidence labels, same-profile upgrade simulation, local DxDiag import with trilingual PNG downloads, checklist persistence/reset, corrupt-progress filtering, and money-page link safety.
 
 P2 remains out of scope. Qualitative multi-resolution performance models and laptop TGP comparisons require reliable external evidence and are not implemented. The requested guide expansion is complete; T3-code pages are intentionally excluded.
 
@@ -190,7 +195,7 @@ P2 remains out of scope. Qualitative multi-resolution performance models and lap
 - TypeScript, ESLint, data validation, 67 unit tests, static export, and 26 Chromium acceptance tests passed.
 - All 12 core pages, 18 localized guide pages, and 9 localized policy pages export without error-page markers or unresolved content placeholders.
 - Browser checks covered 10 desktop/mobile English, Spanish, and Arabic route/viewport combinations plus 6 legal-page desktop/mobile combinations. Every page had zero horizontal overflow and no console/runtime errors; checklist state persisted after reload and no analytics requests were sent.
-- Canonical URLs, hreflang, structured-data origins, sitemap, and robots use `https://canirungta6.online`; the generated sitemap contains 45 unique localized URLs and no provisional-domain references.
+- Canonical URLs, hreflang, structured-data origins, sitemap, and robots use `https://canirungta6.online`; the sitemap at the time contained 45 localized URLs and no provisional-domain references.
 - Lighthouse 13.6.0 mobile simulation on the final local static export:
 
 | Page | Performance | SEO | Accessibility | Best practices | LCP | CLS |
@@ -203,7 +208,7 @@ Full results are recorded in `reports/lighthouse-home-mobile.json`, `reports/lig
 
 The live source check in `reports/source-check-2026-11-24.json` found 49/53 sources accessible. The four inaccessible records are the three already-stale Leonida sources and games.gg, which now records HTTP 403 and unavailable/stale state; Bilibili and Rockstar's official credits responded successfully.
 
-Not verified in this environment: Firefox/WebKit, the live GTM/GA4 tag-delivery flow, field real-user Core Web Vitals, DNS/TLS and the live `https://canirungta6.online` deployment. Local and preview zero-request behavior and consent-prompt removal are covered by unit and Chromium tests. Official GTA VI PC requirements and reproducible PC benchmark evidence remain unavailable, so production capability results stay Unknown.
+Not verified in this environment: Firefox/WebKit, the live GTM/GA4 tag-delivery flow, field real-user Core Web Vitals, DNS/TLS and the live `https://canirungta6.online` deployment. Local and preview zero-request behavior and consent-prompt removal are covered by unit and Chromium tests. Official GTA VI PC requirements and reproducible PC benchmark evidence remain unavailable, so the three desktop GPU bands describe estimated console class only.
 
 ## Independence
 

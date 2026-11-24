@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { breadcrumbTrail, localePath, type PageId } from "@/lib/i18n-routes";
+import { alternateLinks, breadcrumbTrail, localePath, type PageId } from "@/lib/i18n-routes";
 import type { Dictionary, Locale } from "@/lib/types";
 
 export const siteOrigin = (process.env.NEXT_PUBLIC_SITE_URL || "https://canirungta6.online").replace(/\/$/, "");
@@ -7,9 +7,7 @@ export const siteOrigin = (process.env.NEXT_PUBLIC_SITE_URL || "https://canirung
 export function pageMetadata(page: PageId, locale: Locale, dictionary: Dictionary): Metadata {
   const entry = dictionary.seo[page];
   const url = `${siteOrigin}${localePath(page, locale)}`;
-  const languages: Record<string, string> = {};
-  for (const alternate of ["en", "es", "ar"] as Locale[]) languages[alternate] = `${siteOrigin}${localePath(page, alternate)}`;
-  languages["x-default"] = languages.en;
+  const languages = Object.fromEntries(alternateLinks(page, siteOrigin).map(({ hrefLang, href }) => [hrefLang, href]));
   return {
     metadataBase: new URL(siteOrigin),
     title: entry.title,

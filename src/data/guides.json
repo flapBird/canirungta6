@@ -1,11 +1,11 @@
 {
   "updatedAt": "2026-11-24",
   "chapters": [
-    { "id": "chapter-1", "number": 1, "title": "Just Like Paradise", "reportedMissions": 22, "optionalMissions": 0, "redacted": 1, "page": null, "sourceIds": ["gamesradar-gta6-missions"] },
-    { "id": "chapter-2", "number": 2, "title": "Paradise Lost", "reportedMissions": 13, "optionalMissions": 2, "redacted": 0, "page": null, "sourceIds": ["gamesradar-gta6-missions"] },
+    { "id": "chapter-1", "number": 1, "title": "Just Like Paradise", "reportedMissions": 22, "optionalMissions": 0, "redacted": 1, "page": "chapter1", "sourceIds": ["gamesradar-gta6-missions"] },
+    { "id": "chapter-2", "number": 2, "title": "Paradise Lost", "reportedMissions": 13, "optionalMissions": 2, "redacted": 0, "page": "chapter2", "sourceIds": ["gamesradar-gta6-missions"] },
     { "id": "chapter-3", "number": 3, "title": "Tits, Ass, Drug Money", "reportedMissions": 27, "optionalMissions": 1, "redacted": 0, "page": "chapter3", "sourceIds": ["gamesradar-gta6-missions"] },
     { "id": "chapter-4", "number": 4, "title": "Vice City, Baby", "reportedMissions": 25, "optionalMissions": 0, "redacted": 1, "page": "chapter4", "sourceIds": ["gamesradar-gta6-missions"] },
-    { "id": "chapter-5", "number": 5, "title": "Top of the World, Ma", "reportedMissions": 7, "optionalMissions": 0, "redacted": 1, "page": null, "sourceIds": ["gamesradar-gta6-missions"] }
+    { "id": "chapter-5", "number": 5, "title": "Top of the World, Ma", "reportedMissions": 7, "optionalMissions": 0, "redacted": 1, "page": "chapter5", "sourceIds": ["gamesradar-gta6-missions"] }
   ],
   "missionLists": {
     "chapter3": [
@@ -92,6 +92,9 @@
     { "id": "m7", "n": 7, "chapter": 1, "status": "reported", "sourceIds": ["sohu-gta6-loot-respawn", "bilibili-gta6-money-loop"] }
   ],
   "pageSourceIds": {
+    "chapter1": ["gamesradar-gta6-missions"],
+    "chapter2": ["gamesradar-gta6-missions"],
+    "chapter5": ["gamesradar-gta6-missions"],
     "chapters": ["gamesradar-gta6-missions", "gamesgg-gta6-missions", "sohu-gta6-chapters"],
     "chapter3": ["gamesradar-gta6-missions", "gamesgg-gta6-missions"],
     "chapter4": ["gamesradar-gta6-missions", "gamesgg-gta6-missions"],

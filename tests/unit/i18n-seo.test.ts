@@ -63,9 +63,9 @@ describe("routes and metadata", () => {
   });
 
   it("keeps sitemap candidates unique and indexable", () => {
-    const urls = Object.values(routes).filter((route) => route.indexable).flatMap((route) => locales.map((locale) => route[locale]));
+    const urls = Object.values(routes).filter((route) => route.indexable).flatMap((route) => (["en", "es"] as const).map((locale) => route[locale]));
     expect(new Set(urls).size).toBe(urls.length);
-    expect(urls).toHaveLength(45);
+    expect(urls).toHaveLength(38);
     expect(urls.every((url) => !url.includes("?"))).toBe(true);
   });
 
@@ -77,14 +77,15 @@ describe("routes and metadata", () => {
       expect(metadata.alternates?.languages).toMatchObject({
         en: `${siteOrigin}${localePath("leonida", "en")}`,
         es: `${siteOrigin}${localePath("leonida", "es")}`,
-        ar: `${siteOrigin}${localePath("leonida", "ar")}`,
+
         "x-default": `${siteOrigin}${localePath("leonida", "en")}`,
       });
+      expect(metadata.alternates?.languages).not.toHaveProperty("ar");
       const images = metadata.openGraph?.images;
       const image = Array.isArray(images) ? images[0] : images;
       expect(image).toMatchObject({ width: 1200, height: 630 });
     }
-    expect(alternateLinks("home", siteOrigin)).toHaveLength(4);
+    expect(alternateLinks("home", siteOrigin)).toHaveLength(3);
     expect(siteOrigin).toBe("https://canirungta6.online");
   });
 
@@ -98,7 +99,7 @@ describe("routes and metadata", () => {
         expect(metadata.alternates?.languages).toMatchObject({
           en: `${siteOrigin}${localePath(page, "en")}`,
           es: `${siteOrigin}${localePath(page, "es")}`,
-          ar: `${siteOrigin}${localePath(page, "ar")}`,
+
           "x-default": `${siteOrigin}${localePath(page, "en")}`,
         });
       }

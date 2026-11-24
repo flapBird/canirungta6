@@ -6,7 +6,7 @@ export function RequirementsTable({ dictionary, profile, specs }: { dictionary: 
   const c = dictionary.common;
   const rows = [
     { key: "cpu", reference: profile.referenceCpuIds.map((id) => cpus.find((cpu) => cpu.id === id)?.name).filter(Boolean).join(" / ") || c.unknown },
-    { key: "gpu", reference: profile.referenceGpuIds.map((id) => gpus.find((gpu) => gpu.id === id)?.name).filter(Boolean).join(" / ") || c.unknown },
+    { key: "gpu", reference: profile.consoleGpuBands ? t.consoleAnchor : profile.referenceGpuIds.map((id) => gpus.find((gpu) => gpu.id === id)?.name).filter(Boolean).join(" / ") || c.unknown },
     { key: "ram", reference: profile.ramGB === null ? c.unknown : `${profile.ramGB} GB` },
     { key: "vram", reference: profile.vramGB === null ? c.unknown : `${profile.vramGB} GB` },
     { key: "os", reference: profile.requiredOs.length ? profile.requiredOs.map((os) => t[os]).join(" / ") : c.unknown },

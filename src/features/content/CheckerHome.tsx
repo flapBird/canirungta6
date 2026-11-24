@@ -1,6 +1,6 @@
 import { Faq } from "@/components/Faq";
 import { SourceList } from "@/components/SourceList";
-import { gpus } from "@/lib/data";
+import { gpus, profiles } from "@/lib/data";
 import { localePath } from "@/lib/i18n-routes";
 import type { Dictionary, Locale } from "@/lib/types";
 import { CheckerTool } from "@/features/checker/CheckerTool";
@@ -76,7 +76,7 @@ export function CheckerHome({ locale, dictionary }: { locale: Locale; dictionary
         </section>
 
         <div className="mt-12 grid items-start gap-6 lg:grid-cols-2">
-          <SourceList ids={["rockstar-gta6-out-now", "rockstar-gta6-platforms"]} dictionary={dictionary} title={t.sources} />
+          <SourceList ids={profiles.find((item) => item.game === "gta6")!.sourceIds} dictionary={dictionary} title={t.sources} />
           <Faq dictionary={dictionary} title={t.faqTitle} />
         </div>
       </div>

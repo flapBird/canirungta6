@@ -88,6 +88,22 @@ export function validateDataset(dataset) {
 
   for (const profile of profiles) {
     requireSources(profile, "profile");
+    if (profile.consoleGpuBands) {
+      const seen = new Set();
+      for (const band of ["consoleBelow", "consoleNear", "consoleAbove"]) {
+        const ids = profile.consoleGpuBands[band];
+        if (!Array.isArray(ids) || !ids.length) {
+          errors.push(`profile ${profile.id}: missing GPU band ${band}`);
+          continue;
+        }
+        for (const id of ids) {
+          if (seen.has(id) || !gpus.some((gpu) => gpu.id === id && gpu.deviceType === "desktop")) {
+            errors.push(`profile ${profile.id}: duplicate or invalid desktop GPU ${id}`);
+          }
+          seen.add(id);
+        }
+      }
+    }
     for (const id of profile.referenceCpuIds) if (!cpuIds.has(id)) errors.push(`profile ${profile.id}: unknown CPU ${id}`);
     for (const id of profile.referenceGpuIds) if (!gpuIds.has(id)) errors.push(`profile ${profile.id}: unknown GPU ${id}`);
     for (const field of ["ramGB", "vramGB", "storageReferenceGB"]) {
@@ -113,7 +129,7 @@ export function validateDataset(dataset) {
   requireUnique(guides.moneyMethods, "money method");
   const routeIds = new Set(Object.keys(routes));
   const missionIds = new Set();
-  const expectedGuidePages = ["chapters", "chapter3", "chapter4", "characters", "mandy", "money"];
+  const expectedGuidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money"];
 
   for (const chapter of guides.chapters) {
     requireSources(chapter, "chapter");
@@ -122,7 +138,7 @@ export function validateDataset(dataset) {
     for (const field of ["reportedMissions", "optionalMissions", "redacted"]) {
       if (!Number.isInteger(chapter[field]) || chapter[field] < 0) errors.push(`chapter ${chapter.id}: invalid ${field}`);
     }
-    if (chapter.page && !["chapter3", "chapter4"].includes(chapter.page)) errors.push(`chapter ${chapter.id}: invalid detail page`);
+    if (chapter.page !== `chapter${chapter.number}` || !routeIds.has(chapter.page)) errors.push(`chapter ${chapter.id}: invalid detail page`);
   }
 
   for (const [page, missions] of Object.entries(guides.missionLists)) {

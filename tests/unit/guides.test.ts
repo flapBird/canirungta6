@@ -29,8 +29,8 @@ describe("guide routes", () => {
     expect(jsonLd.itemListElement.map((item: { name: string }) => item.name)).toEqual(["Home", "Characters", "Mandy"]);
   });
 
-  it("emits metadata for all 18 localized guide URLs", () => {
-    for (const page of ["chapters", "chapter3", "chapter4", "characters", "mandy", "money"] as const) {
+  it("emits metadata for all 27 localized guide URLs", () => {
+    for (const page of ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money"] as const) {
       for (const locale of ["en", "es", "ar"] as const) {
         expect(localePath(page, locale)).not.toBe("/");
         expect(getDictionary(locale).seo[page].title).toBeTruthy();
@@ -58,8 +58,8 @@ describe("guide evidence data", () => {
     expect(guideDataset.missionLists.chapter3.filter((mission) => mission.optional)).toHaveLength(1);
     expect(guideDataset.missionLists.chapter4).toHaveLength(25);
     expect(guideDataset.missionLists.chapter4.at(-1)).toMatchObject({ name: "From Zero", secondaryTitle: true });
-    for (const chapter of guideChapters.filter((item) => item.page)) {
-      expect(guideDataset.missionLists[chapter.page!]).toHaveLength(chapter.reportedMissions);
+    for (const [page, missions] of Object.entries(guideDataset.missionLists)) {
+      expect(missions.length).toBe(guideChapters.find((chapter) => chapter.page === page)?.reportedMissions);
     }
   });
 

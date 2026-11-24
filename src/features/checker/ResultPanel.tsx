@@ -72,10 +72,11 @@ export const ResultPanel = forwardRef<HTMLDivElement, ResultPanelProps>(function
           </div>
 
           <div className="mt-5 text-center">
-            <p className="text-sm text-muted">{t.readiness}</p>
-            <p className={`mt-2 text-3xl font-black tracking-tight ${result.tier === "unknown" ? "text-warning" : result.tier === "unlikely" ? "text-danger" : "text-success"}`}>
+            <p className="text-sm text-muted">{profile.consoleGpuBands ? t.consoleTitle : t.readiness}</p>
+            <p className={`mt-2 text-3xl font-black tracking-tight ${result.tier === "unknown" ? "text-warning" : (result.tier === "unlikely" || result.tier === "consoleBelow") ? "text-danger" : "text-success"}`}>
               {result.tier === "unknown" ? c.unknownTier : translate(result.tier)}
             </p>
+            {profile.consoleGpuBands && <p className="mt-2 text-sm text-muted">{t.consoleMethod}</p>}
             <p className="mt-1 text-xs text-muted">{t.against}: <bdi dir="ltr">{profile.id}</bdi></p>
           </div>
 

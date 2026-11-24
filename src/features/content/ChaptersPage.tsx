@@ -10,7 +10,6 @@ import type { Dictionary, Locale } from "@/lib/types";
 
 export function ChaptersPage({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
   const t = dictionary.guides;
-  const url = `${siteOrigin}${localePath("chapters", locale)}`;
   return (
     <div className="container-shell pb-4 pt-10 sm:pt-14">
       <GuidePageHeader eyebrow={t.chaptersEyebrow} title={dictionary.seo.chapters.title} intro={t.chaptersIntro} dictionary={dictionary} />
@@ -23,7 +22,7 @@ export function ChaptersPage({ locale, dictionary }: { locale: Locale; dictionar
           "@type": "ListItem",
           position: index + 1,
           name: `${chapter.number}. ${chapter.title}`,
-          url: chapter.page ? `${siteOrigin}${localePath(chapter.page, locale)}` : `${url}#chapter-${chapter.number}`,
+          url: `${siteOrigin}${localePath(chapter.page, locale)}`,
         })),
       }} />
 
@@ -51,7 +50,7 @@ export function ChaptersPage({ locale, dictionary }: { locale: Locale; dictionar
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="text-xl font-extrabold"><bdi>{chapter.title}</bdi></h3>
-                      {chapter.page && <span className="rounded-full border border-accent/40 bg-accent/10 px-2 py-1 text-xs font-bold text-accent">{t.openChecklist}</span>}
+                      {(chapter.page === "chapter3" || chapter.page === "chapter4") && <span className="rounded-full border border-accent/40 bg-accent/10 px-2 py-1 text-xs font-bold text-accent">{t.openChecklist}</span>}
                     </div>
                     <p className="mt-2 text-sm text-muted">{setting}</p>
                     <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold">
@@ -60,7 +59,7 @@ export function ChaptersPage({ locale, dictionary }: { locale: Locale; dictionar
                       {chapter.redacted > 0 && <span className="rounded-full border border-border px-2.5 py-1 text-muted">{interpolate(t.redactedCount, { count: chapter.redacted })}</span>}
                     </div>
                   </div>
-                  {chapter.page && <a href={localePath(chapter.page, locale)} className="btn-secondary shrink-0">{interpolate(t.chapterGoLabel, { count: chapter.number })} <span className="flip-in-rtl" aria-hidden="true">→</span></a>}
+                  <a href={localePath(chapter.page, locale)} className="btn-secondary shrink-0">{interpolate(t.chapterGoLabel, { count: chapter.number })} <span className="flip-in-rtl" aria-hidden="true">→</span></a>
                 </div>
               </li>
             );
