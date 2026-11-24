@@ -33,6 +33,7 @@ export const ResultPanel = forwardRef<HTMLDivElement, ResultPanelProps>(function
 ) {
   const t = dictionary.checker;
   const c = dictionary.common;
+  const isLeonida = game === "leonida";
   const translate = (key: string) => c[key] ?? t[key] ?? dictionary.leonida[key] ?? key;
   const componentValue = (key: string) => {
     if (key === "cpu") return cpus.find((cpu) => cpu.id === specs.cpuId)?.name ?? c.unknown;
@@ -52,8 +53,8 @@ export const ResultPanel = forwardRef<HTMLDivElement, ResultPanelProps>(function
   return (
     <div ref={ref} tabIndex={-1} className="panel self-start p-5 outline-none sm:p-6 lg:sticky lg:top-6" aria-live="polite" data-clarity-mask="true">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">{t.resultTitle}</h2>
-        <span className="rounded-full border border-warning/40 bg-warning/10 px-3 py-1 text-xs font-bold text-warning">{c.forecast}</span>
+        <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">{isLeonida ? dictionary.leonida.reportTitle : t.resultTitle}</h2>
+        <span className="rounded-full border border-warning/40 bg-warning/10 px-3 py-1 text-xs font-bold text-warning">{isLeonida ? c.historical : c.forecast}</span>
       </div>
 
       {!result ? (
@@ -65,9 +66,9 @@ export const ResultPanel = forwardRef<HTMLDivElement, ResultPanelProps>(function
       ) : (
         <>
           <div className="mt-5 rounded-xl border border-warning/30 bg-warning/5 p-4">
-            <div className="flex items-center gap-2 text-sm font-bold text-warning"><span className="status-dot" aria-hidden="true" />{t.availability}</div>
-            <p className="mt-1 font-extrabold">{game === "leonida" ? dictionary.leonida.gameplayValue : t.availabilityValue}</p>
-            <p className="mt-1 text-sm text-muted">{t.availabilityBody}</p>
+            <div className="flex items-center gap-2 text-sm font-bold text-warning"><span className="status-dot" aria-hidden="true" />{isLeonida ? dictionary.leonida.gameplay : t.availability}</div>
+            <p className="mt-1 font-extrabold">{isLeonida ? dictionary.leonida.gameplayValue : t.availabilityValue}</p>
+            <p className="mt-1 text-sm text-muted">{isLeonida ? dictionary.leonida.playableBody : t.availabilityBody}</p>
           </div>
 
           <div className="mt-5 text-center">
@@ -80,8 +81,8 @@ export const ResultPanel = forwardRef<HTMLDivElement, ResultPanelProps>(function
 
           {result.tier === "unknown" && (
             <div className="mt-4 rounded-xl border border-warning/30 bg-warning/5 p-4">
-              <p className="font-extrabold text-warning">{game === "leonida" ? dictionary.leonida.historicalUnknown : t.unknownTierTitle}</p>
-              <p className="mt-1 text-sm text-muted">{game === "leonida" ? dictionary.leonida.historicalUnknownBody : t.unknownTierBody}</p>
+              <p className="font-extrabold text-warning">{isLeonida ? dictionary.leonida.historicalUnknown : t.unknownTierTitle}</p>
+              <p className="mt-1 text-sm text-muted">{isLeonida ? dictionary.leonida.historicalUnknownBody : t.unknownTierBody}</p>
             </div>
           )}
 

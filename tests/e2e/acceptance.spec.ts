@@ -132,6 +132,43 @@ test("A06: below-reference RAM is explained without an FPS promise", async ({ pa
   await expect(result).toContainText("Not verified");
 });
 
+test("Report, copied link and PNG keep the submitted hardware until the next check", async ({ page, context }) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.goto("/can-i-run-leonida/");
+  const ram = page.getByLabel("Memory (RAM)");
+  const check = page.getByRole("button", { name: "Check Leonida compatibility" });
+  const report = page.locator('[aria-live="polite"]');
+  const reportImage = async () => {
+    const pending = page.waitForEvent("download");
+    await report.getByRole("button", { name: "Download PNG" }).click();
+    const download = await pending;
+    return readFile((await download.path())!);
+  };
+
+  await ram.selectOption("8");
+  await check.click();
+  await expect(report.getByRole("heading", { name: "Leonida historical hardware comparison" })).toBeVisible();
+  await expect(report).toContainText("Leonida playability");
+  await expect(report).not.toContainText("Official PC availability");
+  const submittedUrl = page.url();
+  const submittedImage = await reportImage();
+
+  await ram.selectOption("32");
+  await expect(report.getByText("8 GB", { exact: true })).toBeVisible();
+  await expect(report).toContainText("Below the recorded historical RAM reference.");
+  await report.getByRole("button", { name: "Copy result link" }).click();
+  await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(submittedUrl);
+  expect((await reportImage()).equals(submittedImage)).toBe(true);
+
+  await check.click();
+  await expect(report.getByText("32 GB", { exact: true })).toBeVisible();
+  await expect(report).toContainText("Meets the recorded historical RAM reference.");
+  expect(new URL(page.url()).searchParams.get("ram")).toBe("32");
+  await report.getByRole("button", { name: "Copy result link" }).click();
+  await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(page.url());
+  expect((await reportImage()).equals(submittedImage)).toBe(false);
+});
+
 test("A07: missing production benchmarks stay Unknown in the UI", async ({ page }) => {
   await page.goto("/");
   await selectHardware(page, "Core i5-12400F", "RTX 3060 12GB");

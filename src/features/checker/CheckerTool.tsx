@@ -136,11 +136,8 @@ export function CheckerTool({ locale, dictionary, game }: CheckerToolProps) {
   };
 
   const share = async () => {
-    const query = serializeSpecs(specs, game === "leonida" ? profile.id as LeonidaProfileId : undefined);
-    const url = `${window.location.origin}${window.location.pathname}?${query}`;
-    setShareUrl(url);
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(shareUrl);
       setShareState("copied");
       trackEvent("share_result", { method: "clipboard", game, locale });
     } catch {
@@ -314,7 +311,7 @@ export function CheckerTool({ locale, dictionary, game }: CheckerToolProps) {
           result={result}
           profile={profile}
           status={status}
-          specs={specs}
+          specs={resultSpecs ?? specs}
           stale={stale}
           shareUrl={shareUrl}
           shareState={shareState}

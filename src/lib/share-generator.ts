@@ -86,7 +86,7 @@ export async function generateShareCard(input: ShareCardInput): Promise<Blob> {
 
   context.fillStyle = "#f5f3fa";
   context.font = `800 46px ${font}`;
-  wrapText(context, t.shareCardTitle, edge, 154, 1072, 56, 2);
+  wrapText(context, profile.game === "leonida" ? dictionary.leonida.reportTitle : t.shareCardTitle, edge, 154, 1072, 56, 2);
 
   context.fillStyle = "rgba(255,255,255,0.04)";
   roundedRect(context, 64, 222, 1072, 94, 16);
