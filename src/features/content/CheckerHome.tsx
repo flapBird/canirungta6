@@ -58,10 +58,11 @@ export function CheckerHome({ locale, dictionary }: { locale: Locale; dictionary
         <section className="mt-12" aria-labelledby="home-guides-title">
           <p className="eyebrow">{t.homeEyebrow}</p>
           <h2 id="home-guides-title" className="mt-2 text-2xl font-extrabold tracking-tight">{t.homeTitle}</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             <GuideCard page="chapters" title={t.homeChaptersTitle} body={t.homeChaptersBody} locale={locale} />
             <GuideCard page="characters" title={t.homeCharactersTitle} body={t.homeCharactersBody} locale={locale} />
             <GuideCard page="money" title={t.homeMoneyTitle} body={t.homeMoneyBody} locale={locale} />
+            <GuideCard page="vehicleTracker" title={t.homeTrackerTitle} body={t.homeTrackerBody} locale={locale} />
           </div>
         </section>
 

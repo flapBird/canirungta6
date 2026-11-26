@@ -131,7 +131,7 @@ test("G07: homepage keeps the checker primary and links guides below it", async 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Can I Run GTA 6?");
   await expect(page.getByRole("button", { name: "Check My PC" })).toBeVisible();
   const guidesSection = page.locator("section").filter({ has: page.locator("#home-guides-title") });
-  await expect(guidesSection.getByRole("link")).toHaveCount(3);
+  await expect(guidesSection.getByRole("link")).toHaveCount(4);
   await expect(guidesSection.getByRole("link", { name: /chapters/i })).toHaveAttribute("href", "/gta-6-chapters/");
   await expect(guidesSection.getByRole("link", { name: /characters/i })).toHaveAttribute("href", "/characters/");
   await expect(guidesSection.getByRole("link", { name: /money/i })).toHaveAttribute("href", "/gta-6-money/");
@@ -140,4 +140,7 @@ test("G07: homepage keeps the checker primary and links guides below it", async 
     return section ? Boolean(form.compareDocumentPosition(section) & Node.DOCUMENT_POSITION_FOLLOWING) : false;
   });
   expect(checkerFirst).toBe(true);
+  await guidesSection.getByRole("link", { name: /vehicle trackers/i }).click();
+  await expect(page).toHaveURL(/\/gta-6-vehicle-tracker\/$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Advanced Tracker");
 });
