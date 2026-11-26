@@ -65,7 +65,7 @@ describe("routes and metadata", () => {
   it("keeps sitemap candidates unique and indexable", () => {
     const urls = Object.values(routes).filter((route) => route.indexable).flatMap((route) => (["en", "es"] as const).map((locale) => route[locale]));
     expect(new Set(urls).size).toBe(urls.length);
-    expect(urls).toHaveLength(38);
+    expect(urls).toHaveLength(40);
     expect(urls.every((url) => !url.includes("?"))).toBe(true);
   });
 

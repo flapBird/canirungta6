@@ -12,6 +12,7 @@
   "chapter4": { "en": "gta-6-chapters/chapter-4", "es": "es/capitulos-gta-6/capitulo-4", "ar": "ar/فصول-gta-6/الفصل-4", "indexable": true },
   "characters": { "en": "characters", "es": "es/personajes", "ar": "ar/الشخصيات", "indexable": true },
   "mandy": { "en": "characters/mandy", "es": "es/personajes/mandy", "ar": "ar/الشخصيات/ماندي", "indexable": true },
+  "vehicleTracker": { "en": "gta-6-vehicle-tracker", "es": "es/rastreador-vehiculos-gta-6", "ar": "ar/تتبع-سيارات-gta-6", "indexable": true },
   "money": { "en": "gta-6-money", "es": "es/dinero-gta-6", "ar": "ar/مال-gta-6", "indexable": true },
   "methodology": { "en": "methodology", "es": "es/metodologia", "ar": "ar/المنهجية", "indexable": true },
   "privacy": { "en": "privacy", "es": "es/privacidad", "ar": "ar/الخصوصية", "indexable": true },

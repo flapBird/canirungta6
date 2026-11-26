@@ -129,7 +129,7 @@ export function validateDataset(dataset) {
   requireUnique(guides.moneyMethods, "money method");
   const routeIds = new Set(Object.keys(routes));
   const missionIds = new Set();
-  const expectedGuidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money"];
+  const expectedGuidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker"];
 
   for (const chapter of guides.chapters) {
     requireSources(chapter, "chapter");

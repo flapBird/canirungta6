@@ -720,5 +720,27 @@
     "accessible": true,
     "stale": false,
     "license": null
+  },
+  {
+    "id": "gtaexp-tracker-registration",
+    "publisher": "GTA EXP",
+    "title": "How to Remove Car Trackers in GTA 6",
+    "url": "https://gtaexp.com/guides/vehicles-equipment/gta-6-remove-car-trackers",
+    "kind": "secondary",
+    "checkedAt": "2026-11-26",
+    "accessible": true,
+    "stale": false,
+    "license": null
+  },
+  {
+    "id": "gta6house-advanced-tracker",
+    "publisher": "GTA6.house",
+    "title": "How to remove Advanced Trackers from cars in GTA 6",
+    "url": "https://gta6.house/guides/gta-6-remove-advanced-trackers-cars",
+    "kind": "secondary",
+    "checkedAt": "2026-11-26",
+    "accessible": true,
+    "stale": false,
+    "license": null
   }
 ]

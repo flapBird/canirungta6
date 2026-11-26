@@ -12,6 +12,7 @@ const numbers: Record<GuidePage, string> = {
   characters: "02",
   mandy: "02",
   money: "03",
+  vehicleTracker: "04",
 };
 
 export function GuideCard({ page, eyebrow, title, body, locale }: {

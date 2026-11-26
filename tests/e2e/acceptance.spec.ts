@@ -306,8 +306,8 @@ test("A14: parameterized ES/AR pages keep clean self-language canonical and href
 test("A15: sitemap and robots expose only real indexable paths", async ({ request }) => {
   const sitemap = await (await request.get("/sitemap.xml")).text();
   const locations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  expect(locations).toHaveLength(38);
-  expect(new Set(locations).size).toBe(38);
+  expect(locations).toHaveLength(40);
+  expect(new Set(locations).size).toBe(40);
   expect(locations.every((url) => !url.includes("?"))).toBe(true);
   expect(locations.every((url) => url.startsWith(origin))).toBe(true);
   expect(sitemap).not.toContain("vi-ready.pages.dev");
@@ -521,7 +521,7 @@ test("Port navigation, breadcrumb text alignment and grouped footer work at both
       expect(Math.max(...offsets) - Math.min(...offsets)).toBeLessThanOrEqual(2);
       const footer = page.locator("footer nav");
       await expect(footer.getByRole("list")).toHaveCount(3);
-      await expect(footer.getByRole("link")).toHaveCount(13);
+      await expect(footer.getByRole("link")).toHaveCount(14);
       await expect(footer.locator(`a[href="${portPath}"]`)).toBeVisible();
       expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
     }

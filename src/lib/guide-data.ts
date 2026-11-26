@@ -1,7 +1,7 @@
 import guideData from "@/data/guides.json";
 
 export type ChapterDetailPage = `chapter${1 | 2 | 3 | 4 | 5}`;
-export type GuidePage = "chapters" | ChapterDetailPage | "characters" | "mandy" | "money";
+export type GuidePage = "chapters" | ChapterDetailPage | "characters" | "mandy" | "money" | "vehicleTracker";
 
 export interface GuideChapter {
   id: string;

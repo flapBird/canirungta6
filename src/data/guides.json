@@ -100,6 +100,7 @@
     "chapter4": ["gamesradar-gta6-missions", "gamesgg-gta6-missions"],
     "characters": ["rockstar-gta6-credits"],
     "mandy": ["rockstar-gta6-credits", "gamersky-mandy", "163-mandy-actress"],
+    "vehicleTracker": ["gtaexp-tracker-registration", "gta6house-advanced-tracker"],
     "money": ["ali213-gta6-money", "163-gta6-money", "sohu-gta6-loot-respawn", "bilibili-gta6-money-loop"]
   }
 }

@@ -3,7 +3,7 @@ import routes from "../../src/data/routes.json";
 import guides from "../../src/data/guides.json";
 
 const locales = ["en", "es", "ar"] as const;
-const guidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money"] as const;
+const guidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker"] as const;
 const origin = "https://canirungta6.online";
 
 function routePath(page: (typeof guidePages)[number], locale: (typeof locales)[number]): string {
@@ -19,7 +19,7 @@ function runtimeErrors(page: Page): string[] {
   return errors;
 }
 
-test("G01: all 27 localized guide URLs export canonical static HTML", async ({ request }) => {
+test("G01: all 30 localized guide URLs export canonical static HTML", async ({ request }) => {
   for (const page of guidePages) {
     for (const locale of locales) {
       const path = routePath(page, locale);

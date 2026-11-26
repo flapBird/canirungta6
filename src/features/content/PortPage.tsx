@@ -28,6 +28,23 @@ export function PortPage({ locale, dictionary }: { locale: Locale; dictionary: D
           <li key={date}><time className="text-sm font-bold text-secondary" dateTime={date}>{date}</time><p>{event}</p></li>
         ))}</ol>
       </section>
+      <section className="panel mt-6 p-6">
+        <h2 className="text-2xl font-extrabold">{t.compareHeading}</h2>
+        <dl className="mt-4 space-y-4">
+          <div>
+            <dt><a className="font-bold text-accent underline" href="https://portwatch.online/">PortWatch VI</a></dt>
+            <dd className="mt-1 max-w-3xl text-muted">{t.comparePortWatch}</dd>
+          </div>
+          <div>
+            <dt><a className="font-bold text-accent underline" href="https://gta6port.app/">gta6port.app</a></dt>
+            <dd className="mt-1 max-w-3xl text-muted">{t.compareGta6Port}</dd>
+          </div>
+          <div>
+            <dt className="font-bold">VI Ready</dt>
+            <dd className="mt-1 max-w-3xl text-muted">{t.compareHere}</dd>
+          </div>
+        </dl>
+      </section>
       <div className="my-6 flex flex-wrap gap-3">
         <a className="btn-secondary" href={localePath("leonida", locale)}>{dictionary.leonida.h1}</a>
         <a className="btn-secondary" href={localePath("status", locale)}>{dictionary.seo.status.title}</a>

@@ -15,6 +15,7 @@ export function SiteFooter({ locale, dictionary }: SiteFooterProps) {
     ] },
     { title: nav.guides, links: [
       ["chapters", guides.chaptersCrumb], ["characters", guides.charactersCrumb], ["money", guides.moneyCrumb],
+      ["vehicleTracker", guides.vehicleTrackerCrumb],
     ] },
     { title: common.footerSite, links: [
       ["about", support.aboutTitle], ["methodology", support.methodologyTitle], ["privacy", support.privacyTitle],

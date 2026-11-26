@@ -86,7 +86,7 @@ Each language has four core business pages, for 12 core URLs total:
 
 The unofficial project comparison is available at `/gta-6-port/` (Spanish `/es/port-gta-6/`, Arabic `/ar/gta-6-port/`). The release page tracks dated announcements and the requirements page shows console-derived hardware estimates.
 
-Guide pages add 27 localized URLs:
+Guide pages add 30 localized URLs:
 
 | Page | English | Spanish | Arabic |
 | --- | --- | --- | --- |
@@ -98,9 +98,10 @@ Guide pages add 27 localized URLs:
 | Chapter 4 checklist | `/gta-6-chapters/chapter-4/` | `/es/capitulos-gta-6/capitulo-4/` | `/ar/فصول-gta-6/الفصل-4/` |
 | Characters | `/characters/` | `/es/personajes/` | `/ar/الشخصيات/` |
 | Mandy | `/characters/mandy/` | `/es/personajes/mandy/` | `/ar/الشخصيات/ماندي/` |
+| Vehicle trackers | `/gta-6-vehicle-tracker/` | `/es/rastreador-vehiculos-gta-6/` | `/ar/تتبع-سيارات-gta-6/` |
 | Money | `/gta-6-money/` | `/es/dinero-gta-6/` | `/ar/مال-gta-6/` |
 
-Localized support and policy pages add 15 URLs, bringing the site to 57 static content URLs. The sitemap and hreflang list English and Spanish (38 URLs). Arabic pages retain their routes, canonicals and language switcher:
+Localized support and policy pages add 15 URLs, bringing the site to 60 static content URLs. The sitemap and hreflang list English and Spanish (40 URLs). Arabic pages retain their routes, canonicals and language switcher:
 
 | Page | English | Spanish | Arabic |
 | --- | --- | --- | --- |
