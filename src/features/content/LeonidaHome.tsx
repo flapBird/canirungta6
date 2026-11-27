@@ -69,7 +69,7 @@ export function LeonidaHome({ locale, dictionary }: { locale: Locale; dictionary
         </div>
 
         <div className="mt-12 grid items-start gap-6 lg:grid-cols-2">
-          <SourceList ids={["leonida-project-site", "leonida-upstream-repository", "leonida-status-snapshot", "leonida-historical-reference"]} dictionary={dictionary} title={dictionary.common.sources} />
+          <SourceList ids={["leonida-project-site", "leonida-upstream-repository", "github-leonida-notice", "leonida-historical-reference"]} dictionary={dictionary} title={dictionary.common.sources} />
           <Faq dictionary={dictionary} title={dictionary.checker.faqTitle} />
         </div>
       </div>

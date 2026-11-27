@@ -57,7 +57,7 @@ describe("guide evidence data", () => {
     expect(guideDataset.missionLists.chapter3).toHaveLength(27);
     expect(guideDataset.missionLists.chapter3.filter((mission) => mission.optional)).toHaveLength(1);
     expect(guideDataset.missionLists.chapter4).toHaveLength(25);
-    expect(guideDataset.missionLists.chapter4.at(-1)).toMatchObject({ name: "From Zero", secondaryTitle: true });
+    expect(guideDataset.missionLists.chapter4.at(-1)).toMatchObject({ name: "Starting From Zero", secondaryTitle: true });
     for (const [page, missions] of Object.entries(guideDataset.missionLists)) {
       expect(missions.length).toBe(guideChapters.find((chapter) => chapter.page === page)?.reportedMissions);
     }

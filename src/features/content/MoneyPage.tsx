@@ -76,8 +76,8 @@ export function MoneyPage({ locale, dictionary }: { locale: Locale; dictionary: 
       </div>
 
       <div className="mt-10 grid gap-4 md:grid-cols-2">
-        <GuideCard page="chapter3" title={t.chaptersMoneyTitle} body={t.chapter3Intro} locale={locale} />
-        <GuideCard page="characters" title={t.charactersMandyTitle} body={t.charactersMandyBody} locale={locale} />
+        <GuideCard page="chapter3" title={dictionary.seo.chapter3.title} body={t.chapter3Intro} locale={locale} />
+        <GuideCard page="mandy" title={t.charactersMandyTitle} body={t.charactersMandyBody} locale={locale} />
       </div>
       <div className="mt-12 grid items-start gap-6 lg:grid-cols-2">
         <SourceList ids={pageSourceIds("money")} dictionary={dictionary} title={dictionary.common.sources} />
