@@ -3,7 +3,7 @@ import routes from "../../src/data/routes.json";
 import guides from "../../src/data/guides.json";
 
 const locales = ["en", "es", "ar"] as const;
-const guidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker"] as const;
+const guidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker", "map", "patch"] as const;
 const origin = "https://canirungta6.online";
 
 function routePath(page: (typeof guidePages)[number], locale: (typeof locales)[number]): string {
@@ -19,7 +19,7 @@ function runtimeErrors(page: Page): string[] {
   return errors;
 }
 
-test("G01: all 30 localized guide URLs export canonical static HTML", async ({ request }) => {
+test("G01: all 36 localized guide URLs export canonical static HTML", async ({ request }) => {
   for (const page of guidePages) {
     for (const locale of locales) {
       const path = routePath(page, locale);
@@ -143,4 +143,18 @@ test("G07: homepage keeps the checker primary and links guides below it", async 
   await guidesSection.getByRole("link", { name: /vehicle trackers/i }).click();
   await expect(page).toHaveURL(/\/gta-6-vehicle-tracker\/$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Advanced Tracker");
+});
+
+test("map filters update the markers and list while preserving shareable destinations", async ({ page }) => {
+  await page.goto("/leonida-map/#vice-city-gym");
+  const article = page.locator("article");
+  await expect(article.locator("section:target")).toHaveAttribute("id", "vice-city-gym");
+  const filter = page.getByLabel("Filter locations");
+  await filter.selectOption("island");
+  await expect(article.locator('a[href="#vice-city-gym"]')).toHaveCount(0);
+  await expect(article.locator('a[href="#starfish-island"]')).toHaveCount(2);
+  await article.getByRole("link", { name: "Starfish Island", exact: true }).click();
+  await expect(article.locator("section:target")).toHaveAttribute("id", "starfish-island");
+  await filter.selectOption("");
+  await expect(article.locator('a[href="#vice-city-gym"]')).toHaveCount(2);
 });

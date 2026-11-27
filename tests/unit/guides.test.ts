@@ -29,8 +29,8 @@ describe("guide routes", () => {
     expect(jsonLd.itemListElement.map((item: { name: string }) => item.name)).toEqual(["Home", "Characters", "Mandy"]);
   });
 
-  it("emits metadata for all 30 localized guide URLs", () => {
-    for (const page of ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker"] as const) {
+  it("emits metadata for all 36 localized guide URLs", () => {
+    for (const page of ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker", "map", "patch"] as const) {
       for (const locale of ["en", "es", "ar"] as const) {
         expect(localePath(page, locale)).not.toBe("/");
         expect(getDictionary(locale).seo[page].title).toBeTruthy();

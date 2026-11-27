@@ -13,7 +13,21 @@ export function PortPage({ locale, dictionary }: { locale: Locale; dictionary: D
     <article className="container-shell pt-10 sm:pt-14">
       <h1 className="gradient-text max-w-4xl text-3xl font-black sm:text-5xl">{dictionary.seo.port.title}</h1>
       <p className="mt-4 max-w-3xl text-lg text-muted">{t.intro}</p>
-      <p className="mt-2 text-sm text-muted">{dictionary.common.updated} · <time dateTime="2026-11-25">2026-11-25</time></p>
+      <p className="mt-2 text-sm text-muted">{dictionary.common.updated} · <time dateTime="2026-11-27">2026-11-27</time></p>
+      <section id="project-status" className="panel mt-6 p-6">
+        <h2 className="text-2xl font-extrabold">{t.changes}</h2>
+        <dl className="mt-4 grid gap-4 sm:grid-cols-2">
+          {[
+            ["Leonida", t.removed, "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md"],
+            ["Belobug / VIctory-Belobug-AMD", t.belobug, "https://github.com/Belobug/VIctory-Belobug-AMD"],
+            ["VIctory", t.visible, "https://github.com/Marvisak/VIctory/blob/main/README.md"],
+            ["XCL", t.xclAccess, "https://github.com/xcl-dev/xcl/issues/646"],
+          ].map(([name, description, url]) => <div key={name}>
+            <dt><a className="font-bold text-accent underline" href={url}>{name}</a></dt>
+            <dd className="mt-1 text-muted">{description}</dd>
+          </div>)}
+        </dl>
+      </section>
       <div className="panel table-scroll mt-8 p-5">
         <table>
           <thead><tr>{[t.project, t.milestone, t.play, t.hardware].map((label) => <th key={label} scope="col">{label}</th>)}</tr></thead>

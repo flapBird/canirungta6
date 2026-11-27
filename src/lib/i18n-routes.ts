@@ -12,7 +12,7 @@ export function localePath(page: PageId, locale: Locale): string {
 
 export const parentPages: Partial<Record<PageId, PageId>> = { chapter1: "chapters", chapter2: "chapters", chapter5: "chapters", chapter3: "chapters", chapter4: "chapters", mandy: "characters" };
 
-export const guidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker"] as const satisfies readonly PageId[];
+export const guidePages = ["chapters", "chapter1", "chapter2", "chapter3", "chapter4", "chapter5", "characters", "mandy", "money", "vehicleTracker", "map", "patch"] as const satisfies readonly PageId[];
 
 export function isGuidePage(page: PageId): boolean {
   return (guidePages as readonly PageId[]).includes(page);

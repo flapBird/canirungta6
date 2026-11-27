@@ -9,6 +9,8 @@ import { ChaptersPage } from "./ChaptersPage";
 import { CharactersPage } from "./CharactersPage";
 import { LeonidaHome } from "./LeonidaHome";
 import { MandyPage } from "./MandyPage";
+import { LeonidaMap } from "./LeonidaMap";
+import { PatchNotes } from "./PatchNotes";
 import { MoneyPage } from "./MoneyPage";
 import { RequirementsPage } from "./RequirementsPage";
 import { PortPage } from "./PortPage";
@@ -36,6 +38,8 @@ export function LocalizedSlugPage({ locale, slug }: { locale: Locale; slug: stri
       {page === "characters" && <CharactersPage locale={locale} dictionary={dictionary} />}
       {page === "mandy" && <MandyPage locale={locale} dictionary={dictionary} />}
       {page === "vehicleTracker" && <VehicleTrackerPage dictionary={dictionary} />}
+      {page === "map" && <LeonidaMap dictionary={dictionary} />}
+      {page === "patch" && <PatchNotes dictionary={dictionary} />}
       {page === "money" && <MoneyPage locale={locale} dictionary={dictionary} />}
       {(page === "methodology" || page === "privacy" || page === "terms" || page === "cookies" || page === "about") && <SupportPage page={page} locale={locale} dictionary={dictionary} />}
     </>

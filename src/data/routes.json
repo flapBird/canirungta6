@@ -13,6 +13,8 @@
   "characters": { "en": "characters", "es": "es/personajes", "ar": "ar/الشخصيات", "indexable": true },
   "mandy": { "en": "characters/mandy", "es": "es/personajes/mandy", "ar": "ar/الشخصيات/ماندي", "indexable": true },
   "vehicleTracker": { "en": "gta-6-vehicle-tracker", "es": "es/rastreador-vehiculos-gta-6", "ar": "ar/تتبع-سيارات-gta-6", "indexable": true },
+  "map": { "en": "leonida-map", "es": "es/mapa-leonida", "ar": "ar/خريطة-ليونيدا", "indexable": true },
+  "patch": { "en": "gta-6-patch-notes", "es": "es/parches-gta-6", "ar": "ar/تحديثات-gta-6", "indexable": true },
   "money": { "en": "gta-6-money", "es": "es/dinero-gta-6", "ar": "ar/مال-gta-6", "indexable": true },
   "methodology": { "en": "methodology", "es": "es/metodologia", "ar": "ar/المنهجية", "indexable": true },
   "privacy": { "en": "privacy", "es": "es/privacidad", "ar": "ar/الخصوصية", "indexable": true },
