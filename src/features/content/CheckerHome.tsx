@@ -16,6 +16,12 @@ const popularIds = [
 
 export function CheckerHome({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
   const t = dictionary.checker;
+  const shortcuts = [
+    ["map", dictionary.guides.mapCrumb],
+    ["mandy", dictionary.guides.charactersMandyTitle],
+    ["port", dictionary.nav.port],
+    ["patch", dictionary.guides.patchCrumb],
+  ] as const;
   const cards = [
     { page: "leonida" as const, title: t.leonidaTitle, body: t.leonidaBody },
     { page: "status" as const, title: t.statusTitle, body: t.statusBody },
@@ -31,6 +37,13 @@ export function CheckerHome({ locale, dictionary }: { locale: Locale; dictionary
           <span className="mt-1 size-2 shrink-0 rounded-full bg-warning" aria-hidden="true" />
           <span><strong className="text-warning">{t.noticeTitle}</strong> <span className="text-muted">{t.noticeBody}</span></span>
         </div>
+        <nav aria-label={dictionary.nav.guides} className="mx-auto mt-5 flex max-w-3xl flex-wrap justify-center gap-x-3 gap-y-1">
+          {shortcuts.map(([page, label]) => (
+            <a key={page} href={localePath(page, locale)} className="inline-flex min-h-11 items-center rounded-lg px-2 text-sm font-bold text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-current">
+              {label}
+            </a>
+          ))}
+        </nav>
       </section>
 
       <div className="container-shell">

@@ -145,6 +145,24 @@ test("G07: homepage keeps the checker primary and links guides below it", async 
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Advanced Tracker");
 });
 
+test("homepage shortcuts open each featured page on mobile and desktop in every language", async ({ page }) => {
+  for (const width of [320, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const locale of locales) {
+      const home = locale === "en" ? "/" : `/${locale}/`;
+      for (const target of ["map", "mandy", "port", "patch"] as const) {
+        await page.goto(home);
+        const path = `/${routes[target][locale]}/`;
+        const shortcut = page.locator("main section").filter({ has: page.locator("h1") }).locator(`nav a[href="${path}"]`);
+        await expect(shortcut).toBeInViewport();
+        await shortcut.click();
+        await expect(page).toHaveURL((url) => decodeURI(url.pathname) === path);
+        await expect(page.locator("main h1")).toBeVisible();
+      }
+    }
+  }
+});
+
 test("map filters update the markers and list while preserving shareable destinations", async ({ page }) => {
   await page.goto("/leonida-map/#vice-city-gym");
   const article = page.locator("article");
